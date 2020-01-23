@@ -1,0 +1,145 @@
+$fa-font-path: '../webfonts';
+@import "../node_modules/@fortawesome/fontawesome-pro/scss/fontawesome.scss";
+@import "../node_modules/@fortawesome/fontawesome-pro/scss/solid.scss";
+@import "../node_modules/@fortawesome/fontawesome-pro/scss/regular.scss";
+@import "../node_modules/@fortawesome/fontawesome-pro/scss/light.scss";
+@import "../node_modules/@fortawesome/fontawesome-pro/scss/duotone.scss";
+@import "../node_modules/@fortawesome/fontawesome-pro/scss/brands.scss";
+
+.flipbook, .df-lightbox-wrapper {
+  &.df-floating, .df-floating {
+    .df-ui-wrapper {
+      border-radius: 0;
+      background: rgba(0, 0, 0, .3);
+      box-shadow: none;
+
+      .df-ui-btn {
+        background: none;
+        color: white;
+
+        &:hover {
+          color: black;
+        }
+      }
+
+      .df-ui-more {
+        .more-container {
+          border-radius: 0;
+          background: rgba(0, 0, 0, .3);
+          box-shadow: none;
+
+          &:before {
+            border-top-color: rgba(0, 0, 0, .3);
+          }
+        }
+      }
+
+      .df-ui-page {
+        input {
+          border-color: white;
+
+          &:focus {
+            outline: 0;
+          }
+        }
+
+        label {
+          color: white;
+        }
+      }
+    }
+
+    .df-ui-sidemenu-close {
+      border-radius: 0;
+      background: rgba(0, 0, 0, .3);
+      color: white;
+      font-size: 17px;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+      }
+
+      &:hover {
+        color: black;
+      }
+    }
+
+    .df-share-box {
+      border-radius: 0;
+
+      textarea {
+        resize: none;
+        border-radius: 0;
+      }
+    }
+
+    &.df-controls-right, &.df-controls-left {
+      .df-ui-controls {
+        bottom: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-flow: column;
+        height: auto;
+        width: 40px;
+        margin: 0;
+
+        .df-ui-btn {
+          width: 100%;
+
+          &.df-ui-next {
+            border: none;
+          }
+
+          &.df-ui-more {
+            &.df-active {
+              .more-container {
+                display: flex;
+                flex-flow: column;
+
+                .df-ui-btn {
+                  span {
+                    white-space: nowrap;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.df-controls-right {
+      .df-ui-controls {
+        left: auto;
+        right: 50px;
+      }
+    }
+
+    &.df-controls-left {
+      .df-ui-controls {
+        left: 50px;
+        right: auto;
+      }
+    }
+
+    &.df-controls-top {
+      .df-ui-controls {
+
+      }
+    }
+
+    &.df-controls-bottom {
+      .df-ui-controls {
+
+      }
+    }
+  }
+}
+
+.flipbook-row {
+  display: flex;
+  justify-content: center;
+}
