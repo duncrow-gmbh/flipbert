@@ -18,12 +18,12 @@ if ('BE' === TL_MODE) {
     $GLOBALS['TL_CSS'][] = 'bundles/flipbert/dist/backend.css';
 }
 
-$GLOBALS['TL_CONFIG']['server'] = 'http://backend.flipbook.test';
+$GLOBALS['TL_CONFIG']['server'] = 'https://flipbert.duncrow.com';
 
 /**
  * Models
  */
-$GLOBALS['TL_MODELS']['tl_flipbook'] = '\\duncrow\\FlipbertBundle\\FlipbookModel';
+$GLOBALS['TL_MODELS']['tl_flipbook'] = '\\Duncrow\\FlipbertBundle\\FlipbookModel';
 
 /**
  * Content Elements
@@ -31,7 +31,7 @@ $GLOBALS['TL_MODELS']['tl_flipbook'] = '\\duncrow\\FlipbertBundle\\FlipbookModel
 array_insert($GLOBALS['TL_CTE'], 1, array
 (
     'duncrowFlipbook' => array(
-        'duncrowFlipbook' => '\\duncrow\\FlipbertBundle\\Flipbook',
-        'duncrowFlipbookRow' => '\\duncrow\\FlipbertBundle\\FlipbookRow'
+        'duncrowFlipbook' => '\\Duncrow\\FlipbertBundle\\Flipbook',
+        'duncrowFlipbookRow' => '\\Duncrow\\FlipbertBundle\\FlipbookRow'
     )
 ));

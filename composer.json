@@ -1,5 +1,5 @@
 {
-  "name": "duncrow/flipbert",
+  "name": "duncrow-gmbh/flipbert",
   "description": "Flipbert Extension for Contao Open Source CMS",
   "keywords": [
     "contao",
@@ -21,10 +21,10 @@
   },
   "autoload": {
     "psr-4": {
-      "duncrow\\FlipbertBundle\\": "src/"
+      "Duncrow\\FlipbertBundle\\": "src/"
     }
   },
   "extra": {
-    "contao-manager-plugin": "duncrow\\FlipbertBundle\\ContaoManagerPlugin"
+    "contao-manager-plugin": "Duncrow\\FlipbertBundle\\ContaoManager\\Plugin"
   }
 }

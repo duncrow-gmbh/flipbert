@@ -1,6 +1,6 @@
 <?php
 
-namespace duncrow\FlipbertBundle;
+namespace Duncrow\FlipbertBundle;
 
 use Contao\Model;
 

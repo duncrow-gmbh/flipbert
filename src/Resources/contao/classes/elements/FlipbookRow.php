@@ -1,6 +1,6 @@
 <?php
 
-namespace duncrow\FlipbertBundle;
+namespace Duncrow\FlipbertBundle;
 
 class FlipbookRow extends \ContentElement
 {
@@ -40,10 +40,10 @@ class FlipbookRow extends \ContentElement
             $this->Template->flipbooks = $objFlipbooks;
         }
 
-        $GLOBALS['TL_JQUERY'][] = '<script src="/bundles/flipbert/assets/dflip/js/dflip.js"></script>';
-        $GLOBALS['TL_JQUERY'][] = '<script src="/bundles/flipbert/dist/flipbert.js"></script>';
-        $GLOBALS['TL_CSS'][] = '/bundles/flipbert/assets/dflip/css/dflip.min.css';
-        $GLOBALS['TL_CSS'][] = '/bundles/flipbert/assets/dflip/css/themify-icons.min.css';
-        $GLOBALS['TL_CSS'][] = '/bundles/flipbert/dist/flipbert.css';
+        $GLOBALS['TL_JQUERY'][] = '<script src="/bundles/duncrowflipbert/assets/dflip/js/dflip.js"></script>';
+        $GLOBALS['TL_JQUERY'][] = '<script src="/bundles/duncrowflipbert/dist/flipbert.js"></script>';
+        $GLOBALS['TL_CSS'][] = '/bundles/duncrowflipbert/assets/dflip/css/dflip.min.css';
+        $GLOBALS['TL_CSS'][] = '/bundles/duncrowflipbert/assets/dflip/css/themify-icons.min.css';
+        $GLOBALS['TL_CSS'][] = '/bundles/duncrowflipbert/dist/flipbert.css';
     }
 }

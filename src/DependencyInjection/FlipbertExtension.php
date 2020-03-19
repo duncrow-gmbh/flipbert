@@ -1,6 +1,6 @@
 <?php
 
-namespace duncrow\FlipbertBundle\DependencyInjection;
+namespace Duncrow\FlipbertBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

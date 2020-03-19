@@ -1,7 +1,7 @@
 <?php
 
 $strFolder = 'FlipbertBundle';
-$strNamespace = 'duncrow\\' . $strFolder;
+$strNamespace = 'Duncrow\\' . $strFolder;
 
 // Register the namespace
 ClassLoader::addNamespaces(array(
