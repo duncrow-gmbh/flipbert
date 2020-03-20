@@ -22,9 +22,9 @@ class FlipbookRow extends \ContentElement
             $pdf = \FilesModel::findByUuid($flipbook->pdf)->path;
             $im = new \Imagick($pdf.'[0]');
             $im->setImageFormat('jpg');
-            $im->writeImage('bundles/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
+            $im->writeImage('/bundles/duncrowflipbert/thumbnails/'.$flipbook->alias.'.jpg');
 
-            $flipbook->thumb = 'bundles/flipbert/thumbnails/'.$flipbook->alias.'.jpg';
+            $flipbook->thumb = '/bundles/duncrowflipbert/thumbnails/'.$flipbook->alias.'.jpg';
         }
 
         if (TL_MODE == 'BE')
