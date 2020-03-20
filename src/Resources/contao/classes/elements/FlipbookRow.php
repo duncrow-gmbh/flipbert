@@ -2,6 +2,10 @@
 
 namespace Duncrow\FlipbertBundle;
 
+use Contao\File;
+use Contao\FilesModel;
+use Contao\Folder;
+
 class FlipbookRow extends \ContentElement
 {
 
@@ -13,6 +17,7 @@ class FlipbookRow extends \ContentElement
 
     /**
      * Generate the content element
+     * @throws \ImagickException
      */
     protected function compile()
     {
@@ -20,11 +25,23 @@ class FlipbookRow extends \ContentElement
 
         foreach($objFlipbooks as $flipbook) {
             $pdf = \FilesModel::findByUuid($flipbook->pdf)->path;
+
+            if (!file_exists('/files/flipbert')) {
+                $flipbertFolder = new Folder('files/flipbert');
+                $flipbertFolder->unprotect();
+                $thumbnailsFolder = new Folder('files/flipbert/thumbnails');
+            }
+
             $im = new \Imagick($pdf.'[0]');
             $im->setImageFormat('jpg');
-            $im->writeImage('bundles/duncrowflipbert/thumbnails/'.$flipbook->alias.'.jpg');
+            $im->writeImage('../files/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
 
-            $flipbook->thumb = 'bundles/duncrowflipbert/thumbnails/'.$flipbook->alias.'.jpg';
+            // recreate symlinks
+            list($class, $method) = $GLOBALS['TL_PURGE']['custom']['symlinks']['callback'];
+            $this->import($class);
+            $this->$class->$method();
+
+            $flipbook->thumb = 'files/flipbert/thumbnails/'.$flipbook->alias.'.jpg';
         }
 
         if (TL_MODE == 'BE')

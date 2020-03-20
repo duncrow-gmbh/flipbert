@@ -23,7 +23,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['server'] = array
 $GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .= ';{flipbook_legend:hide},customerId,server;';
 
 
-class duncrowFlipbook_tl_settings extends tl_settings {
+class duncrowFlipbook_tl_settings extends Backend {
 
     public function checkLicenses($varValue, DataContainer $dc) {
 
