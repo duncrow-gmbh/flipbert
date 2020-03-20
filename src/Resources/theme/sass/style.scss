@@ -142,4 +142,8 @@ $fa-font-path: '../webfonts';
 .flipbook-row {
   display: flex;
   justify-content: center;
+
+  ._df_book-cover {
+    background-size: cover;
+  }
 }

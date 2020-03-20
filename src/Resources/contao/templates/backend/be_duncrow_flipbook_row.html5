@@ -1,8 +1,0 @@
-<div class="flipbook-row">
-    <?php foreach ($this->flipbooks as $flipbook) : ?>
-        <div class="flipbook">
-            <span class="title"><?= $flipbook->title ?></span>
-            <img src="<?= $flipbook->thumb ?>" />
-        </div>
-    <?php endforeach; ?>
-</div>

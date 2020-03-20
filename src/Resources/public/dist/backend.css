@@ -1,9 +1,0 @@
-#tl_navigation .tl_level_1_group .group-duncrowFlipbertExtension {
-    background: url(../img/flipbert.svg) 3px 2px no-repeat;
-    background-size: 13px;
-}
-
-.flipbook-row { display: flex; justify-content: center; }
-.flipbook-row .flipbook { height: 200px; position: relative; margin: 0 20px; }
-.flipbook-row .flipbook .title { display: block; text-align: center }
-.flipbook-row .flipbook img { height: 100%; }

@@ -1,7 +1,0 @@
-<div
-    class="flipbook"
-    data-source="/<?= FilesModel::findByUuid($this->flipbook->pdf)->path ?>"
-    data-controlsposition="<?= $this->duncrowFlipbookControlbarPosition ?>"
-    data-height="<?= $this->duncrowFlipbookHeight ?>"
-    id="flipbook_<?= $this->flipbook->alias ?>">
-</div>
