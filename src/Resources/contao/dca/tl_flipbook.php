@@ -279,7 +279,7 @@ class tl_flipbook extends Backend {
         $customerId = $GLOBALS['TL_CONFIG']['customerId'];
 
         $params = [
-            'title' => $dc->title,
+            'title' => $varValue,
             'domain' => $this->Environment->url,
             'customerId' => $customerId
         ];

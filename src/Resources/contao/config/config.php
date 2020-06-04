@@ -8,14 +8,13 @@ array_insert($GLOBALS['BE_MOD'], 1, array
     'duncrowFlipbertExtension' => array(
         'duncrowFlipbook' => array
         (
-            'tables'        => array('tl_flipbook'),
-            'icon'          => 'system/modules/flipbook/assets/img/box-icon.png',
+            'tables'        => array('tl_flipbook')
         )
     )
 ));
 
 if ('BE' === TL_MODE) {
-    $GLOBALS['TL_CSS'][] = 'bundles/flipbert/dist/backend.css';
+    $GLOBALS['TL_CSS'][] = 'bundles/duncrowflipbert/dist/backend.css';
 }
 
 $GLOBALS['TL_CONFIG']['server'] = 'https://flipbert.duncrow.com';
