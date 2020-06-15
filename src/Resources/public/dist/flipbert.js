@@ -27,7 +27,17 @@ const flipbookClass = function () {
             );
         });
 
+        $(".flipbook-row ._df_thumb").on('click', function () {
+            setTimeout(function () {
+                if($(".df-lightbox-wrapper:visible").length > 0) {
+                    $('body').addClass('flipbook-lightbox-open');
 
+                    $(".df-lightbox-wrapper .df-lightbox-close").on('click', function () {
+                        $('body').removeClass('flipbook-lightbox-open');
+                    });
+                }
+            }, 500);
+        });
     };
 
 };

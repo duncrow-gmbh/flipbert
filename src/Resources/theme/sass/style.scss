@@ -6,6 +6,10 @@ $fa-font-path: '../webfonts';
 @import "../node_modules/@fortawesome/fontawesome-pro/scss/duotone.scss";
 @import "../node_modules/@fortawesome/fontawesome-pro/scss/brands.scss";
 
+body.flipbook-lightbox-open {
+  overflow-y: hidden;
+}
+
 .flipbook, .df-lightbox-wrapper {
   &.df-floating, .df-floating {
 
@@ -158,5 +162,13 @@ $fa-font-path: '../webfonts';
 
   ._df_book-cover {
     background-size: cover;
+  }
+}
+
+.df-lightbox-wrapper {
+  .df-floating {
+    .df-3dcanvas:after {
+      bottom: 5px;
+    }
   }
 }
