@@ -8,6 +8,19 @@ $fa-font-path: '../webfonts';
 
 .flipbook, .df-lightbox-wrapper {
   &.df-floating, .df-floating {
+
+    .df-3dcanvas {
+      &:after {
+        content: 'made with flipbert.com';
+        position: absolute;
+        left: 50%;
+        bottom: 100px;
+        font-size: 12px;
+        color: rgba(0, 0, 0, .3);
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
     .df-ui-wrapper {
       border-radius: 0;
       background: rgba(0, 0, 0, .3);

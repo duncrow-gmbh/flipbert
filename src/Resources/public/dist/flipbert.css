@@ -12555,6 +12555,15 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Brands';
   font-weight: 400; }
 
+.flipbook.df-floating .df-3dcanvas:after, .flipbook .df-floating .df-3dcanvas:after, .df-lightbox-wrapper.df-floating .df-3dcanvas:after, .df-lightbox-wrapper .df-floating .df-3dcanvas:after {
+  content: 'made with flipbert.com';
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.3);
+  transform: translate3d(-50%, 0, 0); }
+
 .flipbook.df-floating .df-ui-wrapper, .flipbook .df-floating .df-ui-wrapper, .df-lightbox-wrapper.df-floating .df-ui-wrapper, .df-lightbox-wrapper .df-floating .df-ui-wrapper {
   border-radius: 0;
   background: rgba(0, 0, 0, 0.3);
