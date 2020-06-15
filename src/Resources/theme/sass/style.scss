@@ -160,6 +160,11 @@ body.flipbook-lightbox-open {
   display: flex;
   justify-content: center;
 
+  @media (max-width: 767px) {
+    flex-flow: column;
+    align-items: center;
+  }
+
   ._df_book-cover {
     background-size: cover;
   }

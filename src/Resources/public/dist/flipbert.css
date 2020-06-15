@@ -12637,6 +12637,10 @@ body.flipbook-lightbox-open {
 .flipbook-row {
   display: flex;
   justify-content: center; }
+  @media (max-width: 767px) {
+    .flipbook-row {
+      flex-flow: column;
+      align-items: center; } }
   .flipbook-row ._df_book-cover {
     background-size: cover; }
 
