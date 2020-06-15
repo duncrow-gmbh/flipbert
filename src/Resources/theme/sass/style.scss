@@ -144,7 +144,12 @@ body.flipbook-lightbox-open {
 
     &.df-controls-top {
       .df-ui-controls {
+        bottom: auto;
+        top: 10px;
 
+        @media (max-width: 767px) {
+          top: 50px;
+        }
       }
     }
 
@@ -174,6 +179,18 @@ body.flipbook-lightbox-open {
   .df-floating {
     .df-3dcanvas:after {
       bottom: 5px;
+    }
+  }
+
+  .df-lightbox-controls {
+    @media (max-width: 767px) {
+      float: none;
+
+      .df-lightbox-close {
+        float: none;
+        margin: 0 auto;
+        display: block;
+      }
     }
   }
 }

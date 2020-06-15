@@ -12634,6 +12634,13 @@ body.flipbook-lightbox-open {
   left: 50px;
   right: auto; }
 
+.flipbook.df-floating.df-controls-top .df-ui-controls, .flipbook .df-floating.df-controls-top .df-ui-controls, .df-lightbox-wrapper.df-floating.df-controls-top .df-ui-controls, .df-lightbox-wrapper .df-floating.df-controls-top .df-ui-controls {
+  bottom: auto;
+  top: 10px; }
+  @media (max-width: 767px) {
+    .flipbook.df-floating.df-controls-top .df-ui-controls, .flipbook .df-floating.df-controls-top .df-ui-controls, .df-lightbox-wrapper.df-floating.df-controls-top .df-ui-controls, .df-lightbox-wrapper .df-floating.df-controls-top .df-ui-controls {
+      top: 50px; } }
+
 .flipbook-row {
   display: flex;
   justify-content: center; }
@@ -12646,3 +12653,11 @@ body.flipbook-lightbox-open {
 
 .df-lightbox-wrapper .df-floating .df-3dcanvas:after {
   bottom: 5px; }
+
+@media (max-width: 767px) {
+  .df-lightbox-wrapper .df-lightbox-controls {
+    float: none; }
+    .df-lightbox-wrapper .df-lightbox-controls .df-lightbox-close {
+      float: none;
+      margin: 0 auto;
+      display: block; } }
