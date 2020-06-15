@@ -12559,7 +12559,7 @@ readers do not read off random characters that represent icons */
   content: 'made with flipbert.com';
   position: absolute;
   left: 50%;
-  bottom: 100px;
+  bottom: 75px;
   font-size: 12px;
   color: rgba(0, 0, 0, 0.3);
   transform: translate3d(-50%, 0, 0); }
