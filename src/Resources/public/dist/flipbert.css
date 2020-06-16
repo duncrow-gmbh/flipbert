@@ -12558,10 +12558,6 @@ readers do not read off random characters that represent icons */
 body.flipbook-lightbox-open {
   overflow-y: hidden; }
 
-.flipbook svg.svg-inline--fa, .df-lightbox-wrapper svg.svg-inline--fa {
-  width: auto !important;
-  padding: 12px 8px; }
-
 .flipbook.df-floating .df-3dcanvas:after, .flipbook .df-floating .df-3dcanvas:after, .df-lightbox-wrapper.df-floating .df-3dcanvas:after, .df-lightbox-wrapper .df-floating .df-3dcanvas:after {
   content: 'made with flipbert.com';
   position: absolute;
@@ -12578,6 +12574,9 @@ body.flipbook-lightbox-open {
   .flipbook.df-floating .df-ui-wrapper .df-ui-btn, .flipbook .df-floating .df-ui-wrapper .df-ui-btn, .df-lightbox-wrapper.df-floating .df-ui-wrapper .df-ui-btn, .df-lightbox-wrapper .df-floating .df-ui-wrapper .df-ui-btn {
     background: none;
     color: white; }
+    .flipbook.df-floating .df-ui-wrapper .df-ui-btn.svg-inline--fa:not(.df-ui-prev), .flipbook.df-floating .df-ui-wrapper .df-ui-btn.svg-inline--fa:not(.df-ui-next), .flipbook .df-floating .df-ui-wrapper .df-ui-btn.svg-inline--fa:not(.df-ui-prev), .flipbook .df-floating .df-ui-wrapper .df-ui-btn.svg-inline--fa:not(.df-ui-next), .df-lightbox-wrapper.df-floating .df-ui-wrapper .df-ui-btn.svg-inline--fa:not(.df-ui-prev), .df-lightbox-wrapper.df-floating .df-ui-wrapper .df-ui-btn.svg-inline--fa:not(.df-ui-next), .df-lightbox-wrapper .df-floating .df-ui-wrapper .df-ui-btn.svg-inline--fa:not(.df-ui-prev), .df-lightbox-wrapper .df-floating .df-ui-wrapper .df-ui-btn.svg-inline--fa:not(.df-ui-next) {
+      width: auto !important;
+      padding: 12px 8px; }
     .flipbook.df-floating .df-ui-wrapper .df-ui-btn:hover, .flipbook .df-floating .df-ui-wrapper .df-ui-btn:hover, .df-lightbox-wrapper.df-floating .df-ui-wrapper .df-ui-btn:hover, .df-lightbox-wrapper .df-floating .df-ui-wrapper .df-ui-btn:hover {
       color: black; }
   .flipbook.df-floating .df-ui-wrapper .df-ui-more .more-container, .flipbook .df-floating .df-ui-wrapper .df-ui-more .more-container, .df-lightbox-wrapper.df-floating .df-ui-wrapper .df-ui-more .more-container, .df-lightbox-wrapper .df-floating .df-ui-wrapper .df-ui-more .more-container {

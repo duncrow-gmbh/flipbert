@@ -12,11 +12,6 @@ body.flipbook-lightbox-open {
 
 .flipbook, .df-lightbox-wrapper {
 
-  svg.svg-inline--fa {
-    width: auto !important;
-    padding: 12px 8px;
-  }
-
   &.df-floating, .df-floating {
 
     .df-3dcanvas {
@@ -39,6 +34,13 @@ body.flipbook-lightbox-open {
       .df-ui-btn {
         background: none;
         color: white;
+
+        &.svg-inline--fa {
+          &:not(.df-ui-prev), &:not(.df-ui-next) {
+            width: auto !important;
+            padding: 12px 8px;
+          }
+        }
 
         &:hover {
           color: black;
