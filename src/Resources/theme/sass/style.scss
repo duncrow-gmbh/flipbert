@@ -11,6 +11,12 @@ body.flipbook-lightbox-open {
 }
 
 .flipbook, .df-lightbox-wrapper {
+
+  svg.svg-inline--fa {
+    width: auto !important;
+    padding: 12px 8px;
+  }
+
   &.df-floating, .df-floating {
 
     .df-3dcanvas {
