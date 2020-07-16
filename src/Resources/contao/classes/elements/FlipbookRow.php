@@ -32,14 +32,16 @@ class FlipbookRow extends \ContentElement
                 $thumbnailsFolder = new Folder('files/flipbert/thumbnails');
             }
 
-            $im = new \Imagick($pdf.'[0]');
-            $im->setImageFormat('jpg');
-            $im->writeImage('../files/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
+            if(!file_exists('files/flipbert/thumbnails/'.$flipbook->alias.'.jpg')) {
+                $im = new \Imagick($pdf.'[0]');
+                $im->setImageFormat('jpg');
+                $im->writeImage('../files/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
 
-            // recreate symlinks
-            list($class, $method) = $GLOBALS['TL_PURGE']['custom']['symlinks']['callback'];
-            $this->import($class);
-            $this->$class->$method();
+                // recreate symlinks
+                list($class, $method) = $GLOBALS['TL_PURGE']['custom']['symlinks']['callback'];
+                $this->import($class);
+                $this->$class->$method();
+            }
 
             $flipbook->thumb = 'files/flipbert/thumbnails/'.$flipbook->alias.'.jpg';
         }
