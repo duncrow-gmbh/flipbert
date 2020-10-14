@@ -1,15 +1,19 @@
 {
   "name": "duncrow-gmbh/flipbert",
-  "description": "Flipbert Extension for Contao Open Source CMS",
+  "description": "Mit unserem Flipbert kannst du Blätterkataloge schnell und zu einem günstigen Preis in deine Contao-Webseite einbinden und das Ganze kinderleicht direkt im Contao Backend pflegen. Zusätzlich hast du die Möglichkeit selber zu entscheiden, wo die Navigation deines Flipbooks sein soll. Nutze Flipbert und mach deine Contao-Seite mit jedem PDF Flipbook ein Stück einzigartiger.",
   "keywords": [
     "contao",
-    "flipbert"
+    "flipbert",
+    "flipbook",
+    "pdf"
   ],
   "type": "contao-bundle",
   "license": "LGPL-3.0+",
   "authors": [
     {
-      "name": "Clemens Martin"
+      "name": "Duncrow GmbH",
+      "email": "office@duncrow.com",
+      "homepage": "https://duncrow.com"
     }
   ],
   "require": {
