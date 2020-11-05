@@ -8,6 +8,7 @@
     "pdf"
   ],
   "type": "contao-bundle",
+  "homepage": "https://flipbert.at",
   "license": "LGPL-3.0+",
   "authors": [
     {
