@@ -20,7 +20,7 @@ $GLOBALS['TL_DCA']['tl_settings']['fields']['server'] = array
     'eval'                    => array( 'maxlength' => 255, 'tl_class' => 'w50', 'disabled' => true )
 );
 
-$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .= ';{flipbook_legend:hide},customerId,server;';
+$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] .= ';{flipbook_legend:hide},license,server;';
 
 
 class duncrowFlipbook_tl_settings extends Backend {
