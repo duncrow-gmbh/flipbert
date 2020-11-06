@@ -276,12 +276,11 @@ class tl_flipbook extends Backend {
 
     public function createOnServer($varValue, DataContainer $dc) {
 
-        $customerId = $GLOBALS['TL_CONFIG']['customerId'];
+        $license = $GLOBALS['TL_CONFIG']['license'];
 
         $params = [
             'title' => $varValue,
-            'domain' => $this->Environment->url,
-            'customerId' => $customerId
+            'license' => $license
         ];
 
         if($flipbookId = $dc->activeRecord->flipbook_id)

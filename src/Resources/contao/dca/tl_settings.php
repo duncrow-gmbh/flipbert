@@ -3,9 +3,9 @@
 /**
  * System configuration
  */
-$GLOBALS['TL_DCA']['tl_settings']['fields']['customerId'] = array
+$GLOBALS['TL_DCA']['tl_settings']['fields']['license'] = array
 (
-    'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['flipbook']['customerId'],
+    'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['flipbook']['license'],
     'inputType'               => 'text',
     'save_callback' => array(
         array( 'duncrowFlipbook_tl_settings', 'checkLicenses' )
@@ -28,7 +28,7 @@ class duncrowFlipbook_tl_settings extends Backend {
     public function checkLicenses($varValue, DataContainer $dc) {
 
         $params = [
-            'customerId' => $varValue
+            'license' => $varValue
         ];
 
         $server = $GLOBALS['TL_CONFIG']['server'].'/checkLicenses';

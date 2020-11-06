@@ -28,11 +28,11 @@ $GLOBALS['TL_LANG']['tl_flipbook']['published_legend']   = 'Veröffentlichung';
 /**
  * Infos
  */
-$GLOBALS['TL_LANG']['tl_flipbook']['fillLicense'] = 'Die stellen Sie sicher, dass die Kundennummer in den Einstellungen ausgefüllt ist.';
+$GLOBALS['TL_LANG']['tl_flipbook']['fillLicense'] = 'Die stellen Sie sicher, dass der Lizenzschlüssel in den Einstellungen ausgefüllt ist.';
 
 /**
  * Errors
  */
 $GLOBALS['TL_LANG']['tl_flipbook']['customerNoLicencesLeft'] = 'Sie haben bereits die maximale Anzahl an Flipbook-Lizenzen verbraucht.';
-$GLOBALS['TL_LANG']['tl_flipbook']['customerNotFound'] = 'Es wurden keine Lizenzen für die hinterlegte Kundennummer gefunden.';
+$GLOBALS['TL_LANG']['tl_flipbook']['customerNotFound'] = 'Es wurden keine Lizenzen für den hinterlegten Lizenzschlüssel gefunden.';
 
