@@ -13,12 +13,12 @@ const flipbookClass = function () {
     };
 
     this.init = function () {
-        $(".flipbook").each(function () {
-            $(this).flipBook(
-                $(this).data('source'),
+        jQuery(".flipbook").each(function () {
+            jQuery(this).flipBook(
+                jQuery(this).data('source'),
                 {
-                    height: $(this).data('height'),
-                    controlsPosition: $(this).data('controlsposition'),
+                    height: jQuery(this).data('height'),
+                    controlsPosition: jQuery(this).data('controlsposition'),
                     paddingTop: 50,
                     paddingLeft: 50,
                     paddingRight: 50,
@@ -27,13 +27,13 @@ const flipbookClass = function () {
             );
         });
 
-        $(".flipbook-row ._df_thumb").on('click', function () {
+        jQuery(".flipbook-row ._df_thumb").on('click', function () {
             setTimeout(function () {
-                if($(".df-lightbox-wrapper:visible").length > 0) {
-                    $('body').addClass('flipbook-lightbox-open');
+                if(jQuery(".df-lightbox-wrapper:visible").length > 0) {
+                    jQuery('body').addClass('flipbook-lightbox-open');
 
-                    $(".df-lightbox-wrapper .df-lightbox-close").on('click', function () {
-                        $('body').removeClass('flipbook-lightbox-open');
+                    jQuery(".df-lightbox-wrapper .df-lightbox-close").on('click', function () {
+                        jQuery('body').removeClass('flipbook-lightbox-open');
                     });
                 }
             }, 500);
@@ -44,7 +44,7 @@ const flipbookClass = function () {
 
 const flipbook = new flipbookClass();
 
-$(function () {
+jQuery(function () {
     flipbook.config();
     flipbook.init();
 });
