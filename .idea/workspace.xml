@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="83769aff-aa28-400e-8a81-34bb8c1677b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Resources/public/img/flipbert_logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resources/contao/dca/tl_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/contao/dca/tl_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resources/contao/languages/de/tl_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/contao/languages/de/tl_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resources/theme/js/basic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/theme/js/basic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resources/theme/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/theme/sass/style.scss" afterDir="false" />
-    </list>
+    <list default="true" id="83769aff-aa28-400e-8a81-34bb8c1677b2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,17 +23,29 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Resources/theme/sass" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Resources/contao/templates/frontend" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Resources/contao/templates/frontend" />
       <recent name="$PROJECT_DIR$/src/Resources/theme/sass" />
       <recent name="$PROJECT_DIR$/src/Resources/theme/js" />
       <recent name="$PROJECT_DIR$/src/Resources/public/img" />
       <recent name="$PROJECT_DIR$/src/Resources/contao/languages/de" />
-      <recent name="$PROJECT_DIR$/src/Resources/contao/dca" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -52,7 +57,7 @@
       <updated>1604558751549</updated>
       <workItem from="1604558752667" duration="31000" />
       <workItem from="1604661215119" duration="26000" />
-      <workItem from="1612524051589" duration="129000" />
+      <workItem from="1612524051589" duration="348000" />
     </task>
     <servers />
   </component>

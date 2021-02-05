@@ -12558,14 +12558,26 @@ readers do not read off random characters that represent icons */
 body.flipbook-lightbox-open {
   overflow-y: hidden; }
 
-.flipbook.df-floating .df-3dcanvas:after, .flipbook .df-floating .df-3dcanvas:after, .df-lightbox-wrapper.df-floating .df-3dcanvas:after, .df-lightbox-wrapper .df-floating .df-3dcanvas:after {
-  content: 'made with flipbert.com';
+.flipbook.df-floating .df-ui-controls:before, .flipbook .df-floating .df-ui-controls:before, .df-lightbox-wrapper.df-floating .df-ui-controls:before, .df-lightbox-wrapper .df-floating .df-ui-controls:before {
+  content: '';
   position: absolute;
-  left: 50%;
-  bottom: 75px;
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.3);
-  transform: translate3d(-50%, 0, 0); }
+  left: calc(100% + 3px);
+  top: 0;
+  bottom: 0;
+  height: 42px;
+  width: 42px;
+  background-image: url("/bundles/duncrowflipbert/img/flipbert_logo.svg");
+  background-repeat: no-repeat; }
+
+.flipbook.df-floating .df-ui-controls:after, .flipbook .df-floating .df-ui-controls:after, .df-lightbox-wrapper.df-floating .df-ui-controls:after, .df-lightbox-wrapper .df-floating .df-ui-controls:after {
+  content: 'made with flipbert.at';
+  position: absolute;
+  left: calc(100% + 50px);
+  top: 50%;
+  color: #FF652A;
+  font-size: 10px;
+  white-space: nowrap;
+  transform: translate3d(0, -50%, 0); }
 
 .flipbook.df-floating .df-ui-wrapper, .flipbook .df-floating .df-ui-wrapper, .df-lightbox-wrapper.df-floating .df-ui-wrapper, .df-lightbox-wrapper .df-floating .df-ui-wrapper {
   border-radius: 0;
@@ -12619,6 +12631,13 @@ body.flipbook-lightbox-open {
   height: auto;
   width: 40px;
   margin: 0; }
+  .flipbook.df-floating.df-controls-right .df-ui-controls:after, .flipbook.df-floating.df-controls-left .df-ui-controls:after, .flipbook .df-floating.df-controls-right .df-ui-controls:after, .flipbook .df-floating.df-controls-left .df-ui-controls:after, .df-lightbox-wrapper.df-floating.df-controls-right .df-ui-controls:after, .df-lightbox-wrapper.df-floating.df-controls-left .df-ui-controls:after, .df-lightbox-wrapper .df-floating.df-controls-right .df-ui-controls:after, .df-lightbox-wrapper .df-floating.df-controls-left .df-ui-controls:after {
+    display: none; }
+  .flipbook.df-floating.df-controls-right .df-ui-controls:before, .flipbook.df-floating.df-controls-left .df-ui-controls:before, .flipbook .df-floating.df-controls-right .df-ui-controls:before, .flipbook .df-floating.df-controls-left .df-ui-controls:before, .df-lightbox-wrapper.df-floating.df-controls-right .df-ui-controls:before, .df-lightbox-wrapper.df-floating.df-controls-left .df-ui-controls:before, .df-lightbox-wrapper .df-floating.df-controls-right .df-ui-controls:before, .df-lightbox-wrapper .df-floating.df-controls-left .df-ui-controls:before {
+    top: calc(100% + 3px);
+    left: 0;
+    width: 40px;
+    height: 40px; }
   .flipbook.df-floating.df-controls-right .df-ui-controls .df-ui-btn, .flipbook.df-floating.df-controls-left .df-ui-controls .df-ui-btn, .flipbook .df-floating.df-controls-right .df-ui-controls .df-ui-btn, .flipbook .df-floating.df-controls-left .df-ui-controls .df-ui-btn, .df-lightbox-wrapper.df-floating.df-controls-right .df-ui-controls .df-ui-btn, .df-lightbox-wrapper.df-floating.df-controls-left .df-ui-controls .df-ui-btn, .df-lightbox-wrapper .df-floating.df-controls-right .df-ui-controls .df-ui-btn, .df-lightbox-wrapper .df-floating.df-controls-left .df-ui-controls .df-ui-btn {
     width: 100%; }
     .flipbook.df-floating.df-controls-right .df-ui-controls .df-ui-btn.df-ui-next, .flipbook.df-floating.df-controls-left .df-ui-controls .df-ui-btn.df-ui-next, .flipbook .df-floating.df-controls-right .df-ui-controls .df-ui-btn.df-ui-next, .flipbook .df-floating.df-controls-left .df-ui-controls .df-ui-btn.df-ui-next, .df-lightbox-wrapper.df-floating.df-controls-right .df-ui-controls .df-ui-btn.df-ui-next, .df-lightbox-wrapper.df-floating.df-controls-left .df-ui-controls .df-ui-btn.df-ui-next, .df-lightbox-wrapper .df-floating.df-controls-right .df-ui-controls .df-ui-btn.df-ui-next, .df-lightbox-wrapper .df-floating.df-controls-left .df-ui-controls .df-ui-btn.df-ui-next {
