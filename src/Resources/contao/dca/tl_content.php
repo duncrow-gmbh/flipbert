@@ -8,7 +8,7 @@ $strName = 'tl_content';
 //$GLOBALS['TL_DCA'][$strName]['config']['onload_callback'][] = array('duncrowFlipbook_tl_content', 'showJsLibraryHint');
 
 /* Palettes */
-$GLOBALS['TL_DCA'][$strName]['palettes']['duncrowFlipbook'] = '{type_legend},type,duncrowFlipbook;{flipbookOptions_legend},duncrowFlipbookHeight,duncrowFlipbookControlbarPosition;{invisible_legend:hide},invisible,start,stop;';
+$GLOBALS['TL_DCA'][$strName]['palettes']['duncrowFlipbook'] = '{type_legend},type,duncrowFlipbook;{flipbookOptions_legend},duncrowFlipbookHeight,duncrowFlipbookControlbarPosition,duncrowFlipbookBackgroundColor;{invisible_legend:hide},invisible,start,stop;';
 $GLOBALS['TL_DCA'][$strName]['palettes']['duncrowFlipbookRow'] = '{type_legend},type,duncrowFlipbooks;{flipbookOptions_legend},duncrowFlipbookControlbarPosition;{invisible_legend:hide},invisible,start,stop;';
 
 /* Fields */
@@ -72,6 +72,17 @@ $GLOBALS['TL_DCA'][$strName]['fields']['duncrowFlipbookControlbarPosition'] = ar
         'tl_class'     => 'w50'
     ),
     'sql'        => "blob NULL"
+);
+
+$GLOBALS['TL_DCA'][$strName]['fields']['duncrowFlipbookBackgroundColor'] = array
+(
+    'label'      => &$GLOBALS['TL_LANG'][$strName]['duncrowFlipbookBackgroundColor'],
+    'inputType'  => 'text',
+    'eval'       => array(
+        'mandatory'     => false,
+        'tl_class'      => 'clr w50'
+    ),
+    'sql'        => "varchar(12) NOT NULL default 'transparent'"
 );
 
 

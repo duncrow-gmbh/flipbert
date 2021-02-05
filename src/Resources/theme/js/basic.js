@@ -14,6 +14,10 @@ const flipbookClass = function () {
 
     this.init = function () {
         jQuery(".flipbook").each(function () {
+
+            let backgroundColor = jQuery(this).data('backgroundcolor');
+            if(backgroundColor !== 'transparent') backgroundColor = '#' + backgroundColor;
+
             jQuery(this).flipBook(
                 jQuery(this).data('source'),
                 {
@@ -22,7 +26,8 @@ const flipbookClass = function () {
                     paddingTop: 50,
                     paddingLeft: 50,
                     paddingRight: 50,
-                    paddingBottom: 50
+                    paddingBottom: 50,
+                    backgroundColor: backgroundColor
                 }
             );
         });

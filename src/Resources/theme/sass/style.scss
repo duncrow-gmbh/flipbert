@@ -14,15 +14,28 @@ body.flipbook-lightbox-open {
 
   &.df-floating, .df-floating {
 
-    .df-3dcanvas {
-      &:after {
-        content: 'made with flipbert.com';
+    .df-ui-controls {
+      &:before {
+        content: '';
         position: absolute;
-        left: 50%;
-        bottom: 75px;
-        font-size: 12px;
-        color: rgba(0, 0, 0, .3);
-        transform: translate3d(-50%, 0, 0);
+        left: calc(100% + 3px);
+        top: 0;
+        bottom: 0;
+        height: 42px;
+        width: 42px;
+        background-image: url("/bundles/duncrowflipbert/img/flipbert_logo.svg");
+        background-repeat: no-repeat;
+      }
+
+      &:after {
+        content: 'made with flipbert.at';
+        position: absolute;
+        left: calc(100% + 50px);
+        top: 50%;
+        color: #FF652A;
+        font-size: 10px;
+        white-space: nowrap;
+        transform: translate3d(0, -50%, 0);
       }
     }
 
@@ -110,6 +123,17 @@ body.flipbook-lightbox-open {
         height: auto;
         width: 40px;
         margin: 0;
+
+        &:after {
+          display: none;
+        }
+
+        &:before {
+          top: calc(100% + 3px);
+          left: 0;
+          width: 40px;
+          height: 40px;
+        }
 
         .df-ui-btn {
           width: 100%;
