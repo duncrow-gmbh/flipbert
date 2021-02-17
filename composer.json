@@ -27,10 +27,20 @@
   },
   "autoload": {
     "psr-4": {
-      "Duncrow\\FlipbertBundle\\": "src/"
-    }
+      "DuncrowGmbh\\Flipbert\\": "src/"
+    },
+    "classmap": [
+      "src/Resources/contao/"
+    ],
+    "files": [],
+    "exclude-from-classmap": [
+      "src/Resources/contao/config/",
+      "src/Resources/contao/dca/",
+      "src/Resources/contao/languages/",
+      "src/Resources/contao/templates/"
+    ]
   },
   "extra": {
-    "contao-manager-plugin": "Duncrow\\FlipbertBundle\\ContaoManager\\Plugin"
+    "contao-manager-plugin": "DuncrowGmbh\\Flipbert\\ContaoManager\\Plugin"
   }
 }

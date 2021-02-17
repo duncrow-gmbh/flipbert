@@ -1,10 +1,11 @@
 <?php
 
-namespace Duncrow\FlipbertBundle;
+namespace DuncrowGmbh\Flipbert\Classes;
 
 use Contao\File;
 use Contao\FilesModel;
 use Contao\Folder;
+use DuncrowGmbh\Flipbert\Models\FlipbookModel;
 
 class FlipbookRow extends \ContentElement
 {
@@ -59,10 +60,10 @@ class FlipbookRow extends \ContentElement
             $this->Template->flipbooks = $objFlipbooks;
         }
 
-        $GLOBALS['TL_JQUERY'][] = '<script src="/bundles/duncrowflipbert/assets/dflip/js/dflip.js"></script>';
-        $GLOBALS['TL_JQUERY'][] = '<script src="/bundles/duncrowflipbert/dist/flipbert.js"></script>';
-        $GLOBALS['TL_CSS'][] = '/bundles/duncrowflipbert/assets/dflip/css/dflip.min.css';
-        $GLOBALS['TL_CSS'][] = '/bundles/duncrowflipbert/assets/dflip/css/themify-icons.min.css';
-        $GLOBALS['TL_CSS'][] = '/bundles/duncrowflipbert/dist/flipbert.css';
+        $GLOBALS['TL_JQUERY'][] = '<script src="/bundles/duncrowgmbhflipbert/assets/dflip/js/dflip.js"></script>';
+        $GLOBALS['TL_JQUERY'][] = '<script src="/bundles/duncrowgmbhflipbert/dist/flipbert.js"></script>';
+        $GLOBALS['TL_CSS'][] = '/bundles/duncrowgmbhflipbert/assets/dflip/css/dflip.min.css';
+        $GLOBALS['TL_CSS'][] = '/bundles/duncrowgmbhflipbert/assets/dflip/css/themify-icons.min.css';
+        $GLOBALS['TL_CSS'][] = '/bundles/duncrowgmbhflipbert/dist/flipbert.css';
     }
 }

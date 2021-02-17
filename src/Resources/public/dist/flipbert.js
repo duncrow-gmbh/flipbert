@@ -1,15 +1,15 @@
 const flipbookClass = function () {
 
     this.config = function () {
-        DFLIP.defaults.pdfjsSrc = "/bundles/duncrowflipbert/assets/dflip/js/libs/pdf.min.js";
-        DFLIP.defaults.pdfjsCompatibilitySrc = "/bundles/duncrowflipbert/assets/dflip/js/libs/compatibility.js";
-        DFLIP.defaults.pdfjsWorkerSrc = "/bundles/duncrowflipbert/assets/dflip/js/libs/pdf.worker.min.js";
-        DFLIP.defaults.threejsSrc = "/bundles/duncrowflipbert/assets/dflip/js/libs/three.min.js";
-        DFLIP.defaults.mockupjsSrc = "/bundles/duncrowflipbert/assets/dflip/js/libs/mockup.min.js";
-        DFLIP.defaults.soundFile = "/bundles/duncrowflipbert/assets/dflip/sound/turn2.mp3";
-        DFLIP.defaults.imagesLocation = "/bundles/duncrowflipbert/assets/dflip/images";
-        DFLIP.defaults.imageResourcesPath = "/bundles/duncrowflipbert/assets/dflip/images/pdfjs/";
-        DFLIP.defaults.cMapUrl = "/bundles/duncrowflipbert/assets/dflip/js/libs/cmaps/";
+        DFLIP.defaults.pdfjsSrc = "/bundles/duncrowgmbhflipbert/assets/dflip/js/libs/pdf.min.js";
+        DFLIP.defaults.pdfjsCompatibilitySrc = "/bundles/duncrowgmbhflipbert/assets/dflip/js/libs/compatibility.js";
+        DFLIP.defaults.pdfjsWorkerSrc = "/bundles/duncrowgmbhflipbert/assets/dflip/js/libs/pdf.worker.min.js";
+        DFLIP.defaults.threejsSrc = "/bundles/duncrowgmbhflipbert/assets/dflip/js/libs/three.min.js";
+        DFLIP.defaults.mockupjsSrc = "/bundles/duncrowgmbhflipbert/assets/dflip/js/libs/mockup.min.js";
+        DFLIP.defaults.soundFile = "/bundles/duncrowgmbhflipbert/assets/dflip/sound/turn2.mp3";
+        DFLIP.defaults.imagesLocation = "/bundles/duncrowgmbhflipbert/assets/dflip/images";
+        DFLIP.defaults.imageResourcesPath = "/bundles/duncrowgmbhflipbert/assets/dflip/images/pdfjs/";
+        DFLIP.defaults.cMapUrl = "/bundles/duncrowgmbhflipbert/assets/dflip/js/libs/cmaps/";
     };
 
     this.init = function () {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Duncrow\FlipbertBundle\DependencyInjection;
+namespace DuncrowGmbh\Flipbert\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -15,14 +15,13 @@ class FlipbertExtension extends Extension
     /**
      * {@inheritdoc}
      */
-    public function load(array $mergedConfig, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container)
     {
         $loader = new YamlFileLoader(
             $container,
             new FileLocator(__DIR__.'/../Resources/config')
         );
 
-        $loader->load('listener.yml');
         $loader->load('services.yml');
     }
 }

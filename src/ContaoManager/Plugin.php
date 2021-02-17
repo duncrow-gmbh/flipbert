@@ -1,11 +1,11 @@
 <?php
 
-namespace Duncrow\FlipbertBundle\ContaoManager;
+namespace DuncrowGmbh\Flipbert\ContaoManager;
 
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
-use Duncrow\FlipbertBundle\DuncrowFlipbertBundle;
+use DuncrowGmbh\Flipbert\DuncrowGmbhFlipbertBundle;
 
 class Plugin implements BundlePluginInterface
 {
@@ -15,7 +15,7 @@ class Plugin implements BundlePluginInterface
     public function getBundles(ParserInterface $parser)
     {
         return [
-            BundleConfig::create(DuncrowFlipbertBundle::class)
+            BundleConfig::create(DuncrowGmbhFlipbertBundle::class)
                 ->setLoadAfter(
                     [
                         \Symfony\Bundle\TwigBundle\TwigBundle::class,

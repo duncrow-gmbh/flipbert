@@ -22,7 +22,7 @@ $GLOBALS['TL_CONFIG']['server'] = 'https://flipbert.duncrow.com';
 /**
  * Models
  */
-$GLOBALS['TL_MODELS']['tl_flipbook'] = '\\Duncrow\\FlipbertBundle\\FlipbookModel';
+$GLOBALS['TL_MODELS']['tl_flipbook'] = '\\DuncrowGmbh\\Flipbert\\Models\\FlipbookModel';
 
 /**
  * Content Elements
@@ -30,7 +30,7 @@ $GLOBALS['TL_MODELS']['tl_flipbook'] = '\\Duncrow\\FlipbertBundle\\FlipbookModel
 array_insert($GLOBALS['TL_CTE'], 1, array
 (
     'duncrowFlipbook' => array(
-        'duncrowFlipbook' => '\\Duncrow\\FlipbertBundle\\Flipbook',
-        'duncrowFlipbookRow' => '\\Duncrow\\FlipbertBundle\\FlipbookRow'
+        'duncrowFlipbook' => '\\DuncrowGmbh\\Flipbert\\Classes\\Flipbook',
+        'duncrowFlipbookRow' => '\\DuncrowGmbh\\Flipbert\\Classes\\FlipbookRow'
     )
 ));
