@@ -2,8 +2,6 @@
 
 namespace DuncrowGmbh\Flipbert\Classes;
 
-use Contao\File;
-use Contao\FilesModel;
 use Contao\Folder;
 use DuncrowGmbh\Flipbert\Models\FlipbookModel;
 
@@ -18,7 +16,6 @@ class FlipbookRow extends \ContentElement
 
     /**
      * Generate the content element
-     * @throws \ImagickException
      */
     protected function compile()
     {
@@ -34,7 +31,7 @@ class FlipbookRow extends \ContentElement
             }
 
             if(!file_exists('files/flipbert/thumbnails/'.$flipbook->alias.'.jpg')) {
-                $im = new \Imagick($pdf.'[0]');
+                $im = new \Gmagick($pdf.'[0]');
                 $im->setImageFormat('jpg');
                 $im->writeImage('../files/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
 

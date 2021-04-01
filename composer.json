@@ -20,7 +20,8 @@
   "require": {
     "php": "^7.2",
     "contao/core-bundle": "^4.4",
-    "guzzlehttp/guzzle": "^6.5"
+    "guzzlehttp/guzzle": "^6.5",
+    "ext-gmagick": "*"
   },
   "require-dev": {
     "contao/manager-plugin": "^2.0"
