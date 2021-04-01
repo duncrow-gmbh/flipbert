@@ -31,7 +31,7 @@ class FlipbookRow extends \ContentElement
             }
 
             if(!file_exists('files/flipbert/thumbnails/'.$flipbook->alias.'.jpg')) {
-                $im = new \Gmagick($pdf.'[0]');
+                $im = new \Imagick($pdf.'[0]');
                 $im->setImageFormat('jpg');
                 $im->writeImage('../files/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
 
