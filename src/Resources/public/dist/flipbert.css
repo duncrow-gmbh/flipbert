@@ -12671,7 +12671,8 @@ body.flipbook-lightbox-open {
       flex-flow: column;
       align-items: center; } }
   .flipbook-row ._df_book-cover {
-    background-size: cover; }
+    background-size: cover;
+    background-position: center; }
 
 .df-lightbox-wrapper .df-floating .df-3dcanvas:after {
   bottom: 5px; }

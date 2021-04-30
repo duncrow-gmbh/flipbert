@@ -2,6 +2,7 @@
 
 namespace DuncrowGmbh\Flipbert\Classes;
 
+use Contao\FilesModel;
 use Contao\Folder;
 use DuncrowGmbh\Flipbert\Models\FlipbookModel;
 
@@ -30,18 +31,25 @@ class FlipbookRow extends \ContentElement
                 $thumbnailsFolder = new Folder('files/flipbert/thumbnails');
             }
 
-            if(!file_exists('files/flipbert/thumbnails/'.$flipbook->alias.'.jpg')) {
-                $im = new \Imagick($pdf.'[0]');
-                $im->setImageFormat('jpg');
-                $im->writeImage('../files/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
+            if($flipbook->thumbnail) {
+                $objFile = FilesModel::findByUuid($flipbook->thumbnail);
+                $thumbnail = $objFile->path;
+            }
+            else {
+                if(!file_exists('files/flipbert/thumbnails/'.$flipbook->alias.'.jpg')) {
+                    $im = new \Imagick($pdf.'[0]');
+                    $im->setImageFormat('jpg');
+                    $im->writeImage('../files/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
 
-                // recreate symlinks
-                list($class, $method) = $GLOBALS['TL_PURGE']['custom']['symlinks']['callback'];
-                $this->import($class);
-                $this->$class->$method();
+                    // recreate symlinks
+                    list($class, $method) = $GLOBALS['TL_PURGE']['custom']['symlinks']['callback'];
+                    $this->import($class);
+                    $this->$class->$method();
+                }
+                $thumbnail = 'files/flipbert/thumbnails/'.$flipbook->alias.'.jpg';
             }
 
-            $flipbook->thumb = 'files/flipbert/thumbnails/'.$flipbook->alias.'.jpg';
+            $flipbook->thumb = $thumbnail;
         }
 
         if (TL_MODE == 'BE')

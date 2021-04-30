@@ -91,7 +91,7 @@ $GLOBALS['TL_DCA']['tl_flipbook'] = array
     'palettes' => array
     (
         'default' => '
-			{general_legend},title,alias,pdf;
+			{general_legend},title,alias,pdf,thumbnail;
 			{published_legend},published,start,stop;
 		',
     ),
@@ -145,7 +145,15 @@ $GLOBALS['TL_DCA']['tl_flipbook'] = array
             'label'                   => &$GLOBALS['TL_LANG']['tl_flipbook']['pdf'],
             'exclude'                 => true,
             'inputType'               => 'fileTree',
-            'eval'                    => array('mandatory'=>true, 'fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'tl_class'=>'clr', 'extensions'=>'pdf'),
+            'eval'                    => array('mandatory'=>true, 'fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'tl_class'=>'clr w50', 'extensions'=>'pdf'),
+            'sql'                     => "blob NULL"
+        ),
+        'thumbnail' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_flipbook']['thumbnail'],
+            'exclude'                 => true,
+            'inputType'               => 'fileTree',
+            'eval'                    => array('mandatory'=>false, 'fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'tl_class'=>'w50', 'extensions'=>\Contao\Config::get('validImageTypes')),
             'sql'                     => "blob NULL"
         ),
         'published'         => array
