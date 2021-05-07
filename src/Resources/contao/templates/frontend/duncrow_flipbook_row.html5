@@ -5,7 +5,7 @@
                 data-controlsposition="<?= $this->duncrowFlipbookControlbarPosition ?>"
                 id="flipbook_<?= $flipbook->alias ?>"
                 source="/<?= FilesModel::findByUuid($flipbook->pdf)->path ?>"
-                thumb="<?= $flipbook->thumb ?>">
+                thumb="<?= str_replace('', '%20', $flipbook->thumb) ?>">
 
             <?= $flipbook->title ?>
         </div >
