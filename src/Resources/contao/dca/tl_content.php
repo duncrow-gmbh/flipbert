@@ -8,8 +8,8 @@ $strName = 'tl_content';
 //$GLOBALS['TL_DCA'][$strName]['config']['onload_callback'][] = array('duncrowFlipbook_tl_content', 'showJsLibraryHint');
 
 /* Palettes */
-$GLOBALS['TL_DCA'][$strName]['palettes']['duncrowFlipbook'] = '{type_legend},type,duncrowFlipbook;{flipbookOptions_legend},duncrowFlipbookHeight,duncrowFlipbookControlbarPosition,duncrowFlipbookBackgroundColor;{invisible_legend:hide},invisible,start,stop;';
-$GLOBALS['TL_DCA'][$strName]['palettes']['duncrowFlipbookRow'] = '{type_legend},type,duncrowFlipbooks;{flipbookOptions_legend},duncrowFlipbookControlbarPosition;{invisible_legend:hide},invisible,start,stop;';
+$GLOBALS['TL_DCA'][$strName]['palettes']['duncrowFlipbook'] = '{type_legend},type,duncrowFlipbook;{flipbookOptions_legend},duncrowFlipbookHeight,duncrowFlipbookControlbarPosition,duncrowFlipbookBackgroundColor,duncrowFlipbookHiddenControlElements;{invisible_legend:hide},invisible,start,stop;';
+$GLOBALS['TL_DCA'][$strName]['palettes']['duncrowFlipbookRow'] = '{type_legend},type,duncrowFlipbooks;{flipbookOptions_legend},duncrowFlipbookControlbarPosition,duncrowFlipbookHiddenControlElements;{invisible_legend:hide},invisible,start,stop;';
 
 /* Fields */
 $GLOBALS['TL_DCA'][$strName]['fields']['duncrowFlipbook'] = array
@@ -30,7 +30,7 @@ $GLOBALS['TL_DCA'][$strName]['fields']['duncrowFlipbook'] = array
 $GLOBALS['TL_DCA'][$strName]['fields']['duncrowFlipbooks'] = array
 (
     'label'      => &$GLOBALS['TL_LANG'][$strName]['duncrowFlipbooks'],
-    'inputType'  => 'select',
+    'inputType'  => 'checkboxWizard',
     'filter'     => true,
     'foreignKey' => 'tl_flipbook.title',
     'eval'       => array(
@@ -83,6 +83,19 @@ $GLOBALS['TL_DCA'][$strName]['fields']['duncrowFlipbookBackgroundColor'] = array
         'tl_class'      => 'clr w50'
     ),
     'sql'        => "varchar(12) NOT NULL default 'transparent'"
+);
+
+$GLOBALS['TL_DCA'][$strName]['fields']['duncrowFlipbookHiddenControlElements'] = array
+(
+    'label'      => &$GLOBALS['TL_LANG'][$strName]['duncrowFlipbookHiddenControlElements'],
+    'inputType'  => 'checkbox',
+    'options'    => $GLOBALS['TL_LANG'][$strName]['duncrowFlipbookHiddenControlElements']['options'],
+    'eval'       => array(
+        'mandatory'     => false,
+        'tl_class'      => 'w50',
+        'multiple'      => true
+    ),
+    'sql'        => "blob NULL"
 );
 
 

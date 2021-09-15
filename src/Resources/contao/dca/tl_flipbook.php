@@ -3,6 +3,10 @@
 /**
  * Table tl_flipbook
  */
+
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+
 $GLOBALS['TL_DCA']['tl_flipbook'] = array
 (
 
@@ -208,7 +212,8 @@ class tl_flipbook extends Backend {
      *
      * @return string
      */
-    public function btnToggle( $row, $href, $label, $title, $icon, $attributes ) {
+    public function btnToggle( $row, $href, $label, $title, $icon, $attributes ): string
+    {
         if ( strlen( Input::get( 'tid' ) ) ) {
             $this->toggleVisibility( Input::get( 'tid' ), ( Input::get( 'state' ) == 1 ), ( @func_get_arg( 12 ) ?: null ) );
             $this->redirect( $this->getReferer() );
@@ -228,9 +233,9 @@ class tl_flipbook extends Backend {
      *
      * @param integer $intId
      * @param boolean $blnVisible
-     * @param DataContainer $dc
+     * @param DataContainer|null $dc
      */
-    public function toggleVisibility( $intId, $blnVisible, DataContainer $dc = null ) {
+    public function toggleVisibility(int $intId, bool $blnVisible, DataContainer $dc = null ) {
         // Set the ID and action
         Input::setGet( 'id', $intId );
         Input::setGet( 'act', 'toggle' );
@@ -247,14 +252,13 @@ class tl_flipbook extends Backend {
     /**
      * Auto-generate the product alias if it has not been set yet
      *
-     * @param mixed $varValue
      * @param DataContainer $dc
      *
      * @return string
      *
-     * @throws Exception
      */
-    public function generateAlias( DataContainer $dc ) {
+    public function generateAlias( DataContainer $dc ): string
+    {
         $autoAlias = false;
         $varValue  = $dc->activeRecord->alias;
 
@@ -280,14 +284,21 @@ class tl_flipbook extends Backend {
 
         $this->Database->prepare( "UPDATE tl_flipbook set alias=? WHERE id = ?" )
             ->execute( $varValue, $dc->id );
+
+        return $varValue;
     }
 
+    /**
+     * @throws GuzzleException
+     * @throws Exception
+     */
     public function createOnServer($varValue, DataContainer $dc) {
 
         $license = $GLOBALS['TL_CONFIG']['license'];
 
         $params = [
             'title' => $varValue,
+            'domain' => $_SERVER['SERVER_NAME'],
             'license' => $license
         ];
 
@@ -296,7 +307,7 @@ class tl_flipbook extends Backend {
 
         $server = $GLOBALS['TL_CONFIG']['server'].'/create';
 
-        $client = new \GuzzleHttp\Client();
+        $client = new Client();
         $response = $client->request('GET', $server, [
             'query' => $params
         ]);
@@ -314,11 +325,14 @@ class tl_flipbook extends Backend {
         return $varValue;
     }
 
+    /**
+     * @throws GuzzleException
+     */
     public function deleteOnServer(DataContainer $dc) {
 
         $server = $GLOBALS['TL_CONFIG']['server'].'/delete';
 
-        $client = new \GuzzleHttp\Client();
+        $client = new Client();
         $response = $client->request('GET', $server, [
             'query' => ['flipbookId' => $dc->activeRecord->flipbook_id]
         ]);

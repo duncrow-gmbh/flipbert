@@ -29,7 +29,7 @@ $GLOBALS['TL_LANG']['tl_flipbook']['published_legend']   = 'Veröffentlichung';
 /**
  * Infos
  */
-$GLOBALS['TL_LANG']['tl_flipbook']['fillLicense'] = 'Die stellen Sie sicher, dass der Lizenzschlüssel in den Einstellungen ausgefüllt ist.';
+$GLOBALS['TL_LANG']['tl_flipbook']['fillLicense'] = 'Bitte stellen Sie sicher, dass der Lizenzschlüssel in den Einstellungen ausgefüllt ist.';
 
 /**
  * Errors

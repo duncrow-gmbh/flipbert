@@ -8032,7 +8032,8 @@ DFLIP.parseLinks = function (links) {
       paddingBottom: book.attr("paddingbottom"),
       paddingLeft: book.attr("paddingleft"),
       wpOptions: book.attr("wpoptions"),
-      controlsPosition: book.data("controlsposition")
+      controlsPosition: book.data("controlsposition"),
+      hideControls: book.data('hiddencontrolelements')
     };
 
     options = $.extend(true, {}, options, attrOptions);

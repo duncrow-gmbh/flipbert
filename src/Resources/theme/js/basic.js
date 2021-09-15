@@ -27,7 +27,8 @@ const flipbookClass = function () {
                     paddingLeft: 50,
                     paddingRight: 50,
                     paddingBottom: 50,
-                    backgroundColor: backgroundColor
+                    backgroundColor: backgroundColor,
+                    hideControls: jQuery(this).data('hiddencontrolelements')
                 }
             );
         });

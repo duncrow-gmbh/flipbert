@@ -4,5 +4,6 @@
     data-controlsposition="<?= $this->duncrowFlipbookControlbarPosition ?>"
     data-height="<?= $this->duncrowFlipbookHeight ?>"
     data-backgroundcolor="<?= $this->duncrowFlipbookBackgroundColor ?>"
+    data-hiddenControlElements="<?= implode(',', unserialize($this->duncrowFlipbookHiddenControlElements)) ?>"
     id="flipbook_<?= $this->flipbook->alias ?>">
 </div>

@@ -14,7 +14,7 @@ array_insert($GLOBALS['BE_MOD'], 1, array
 ));
 
 if ('BE' === TL_MODE) {
-    $GLOBALS['TL_CSS'][] = 'bundles/duncrowflipbert/dist/backend.css';
+    $GLOBALS['TL_CSS'][] = 'bundles/duncrowgmbhflipbert/dist/backend.css';
 }
 
 $GLOBALS['TL_CONFIG']['server'] = 'https://flipbert.duncrow.com';
