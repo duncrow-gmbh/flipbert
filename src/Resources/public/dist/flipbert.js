@@ -33,6 +33,19 @@ const flipbookClass = function () {
             );
         });
 
+        jQuery(window).on('popstate', function(e) {
+           if(window.location.href.indexOf('#dflip-') > -1) {
+               let hash = window.location.hash.split('/')[0].replace('dflip-', '');
+
+               if(jQuery(hash).length > 0) {
+                   jQuery('html, body').animate({
+                       scrollTop: jQuery(hash).offset().top + 100
+                   }, 800);
+               }
+           }
+        });
+        jQuery(window).trigger('popstate');
+
         jQuery(".flipbook-row ._df_thumb").on('click', function () {
             setTimeout(function () {
                 if(jQuery(".df-lightbox-wrapper:visible").length > 0) {

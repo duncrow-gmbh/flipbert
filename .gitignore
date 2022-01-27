@@ -1,3 +1,4 @@
 src/Resources/theme/node_modules
+src/Resources/theme/package-lock.json
 src/Resources/public/thumbnails/*
-src/Resources/theme
+
