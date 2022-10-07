@@ -8,8 +8,8 @@ $GLOBALS['TL_LANG']['tl_flipbook']['alias']                = array('Flipbook-Ali
 $GLOBALS['TL_LANG']['tl_flipbook']['pdf']                  = array('PDF-Datei', 'Wählen Sie die PDF-Datei, aus welcher das Flipbook generiert werden soll.');
 $GLOBALS['TL_LANG']['tl_flipbook']['thumbnail']            = array('Thumbnail', 'Wählen Sie ein Thumbnail aus, wenn Sie nicht wünschen, dass das Thumbnail automatisch generiert wird.');
 $GLOBALS['TL_LANG']['tl_flipbook']['published']            = array('Flipbook veröffentlichen', 'Das Flipbook auf der Webseite anzeigen.');
-$GLOBALS['TL_LANG']['tl_flipbook']['start']                = array('Anzeigen ab', 'Das Projekt erst ab diesem Tag auf der Webseite anzeigen.');
-$GLOBALS['TL_LANG']['tl_flipbook']['stop']                 = array('Anzeigen bis', 'Das Projekt nur bis zu diesem Tag auf der Webseite anzeigen.');
+$GLOBALS['TL_LANG']['tl_flipbook']['start']                = array('Anzeigen ab', 'Das Flipbook erst ab diesem Tag auf der Webseite anzeigen.');
+$GLOBALS['TL_LANG']['tl_flipbook']['stop']                 = array('Anzeigen bis', 'Das Flipbook nur bis zu diesem Tag auf der Webseite anzeigen.');
 
 /**
  * Buttons
