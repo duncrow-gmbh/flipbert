@@ -135,7 +135,7 @@ $GLOBALS['TL_DCA']['tl_flipbook'] = array
             'label' => &$GLOBALS['TL_LANG']['tl_flipbook']['alias'],
             'inputType' => 'text',
             'eval' => array('rgxp' => 'alias', 'doNotCopy' => true, 'maxlength' => 128, 'tl_class' => 'w50'),
-            'sql' => "varchar(128) COLLATE utf8_bin NOT NULL default ''"
+            'sql' => "varchar(255) BINARY NOT NULL default ''"
         ),
         'flipbook_id' => array(
             'label' => &$GLOBALS['TL_LANG']['tl_flipbook']['flipbook_id'],
