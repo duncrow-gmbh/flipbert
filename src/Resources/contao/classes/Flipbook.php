@@ -3,6 +3,8 @@
 namespace DuncrowGmbh\Flipbert\Classes;
 
 use DuncrowGmbh\Flipbert\Models\FlipbookModel;
+use Contao\System;
+use Symfony\Component\HttpFoundation\Request; 
 
 class Flipbook extends \ContentElement
 {
@@ -20,7 +22,10 @@ class Flipbook extends \ContentElement
     {
         $objFlipbook = FlipbookModel::findOneBy('id', $this->duncrowFlipbook);
 
-        if (TL_MODE == 'BE')
+        if (System::getContainer()
+            ->get('contao.routing.scope_matcher')
+            ->isBackendRequest(System::getContainer()
+            ->get('request_stack')->getCurrentRequest() ?? Request::create('')))
         {
             $this->strTemplate          = 'be_wildcard';
             $this->Template             = new \BackendTemplate($this->strTemplate);

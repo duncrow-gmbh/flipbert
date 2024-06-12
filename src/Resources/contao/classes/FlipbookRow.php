@@ -5,6 +5,8 @@ namespace DuncrowGmbh\Flipbert\Classes;
 use Contao\FilesModel;
 use Contao\Folder;
 use DuncrowGmbh\Flipbert\Models\FlipbookModel;
+use Contao\System;
+use Symfony\Component\HttpFoundation\Request;
 
 class FlipbookRow extends \ContentElement
 {
@@ -52,7 +54,10 @@ class FlipbookRow extends \ContentElement
             $flipbook->thumb = $thumbnail;
         }
 
-        if (TL_MODE == 'BE')
+        if (System::getContainer()
+            ->get('contao.routing.scope_matcher')
+            ->isBackendRequest(System::getContainer()
+            ->get('request_stack')->getCurrentRequest() ?? Request::create('')))
         {
             $this->strTemplate          = 'be_wildcard';
             //$this->Template             = new \BackendTemplate($this->strTemplate);

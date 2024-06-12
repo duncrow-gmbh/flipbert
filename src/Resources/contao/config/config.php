@@ -1,5 +1,6 @@
 <?php
-
+use Contao\System;
+use Symfony\Component\HttpFoundation\Request; 
 /**
  * Back end modules
  */
@@ -13,7 +14,10 @@ array_insert($GLOBALS['BE_MOD'], 1, array
     )
 ));
 
-if ('BE' === TL_MODE) {
+if (System::getContainer()
+    ->get('contao.routing.scope_matcher')
+    ->isBackendRequest(System::getContainer()
+    ->get('request_stack')->getCurrentRequest() ?? Request::create(''))) {
     $GLOBALS['TL_CSS'][] = 'bundles/duncrowgmbhflipbert/dist/backend.css';
 }
 
