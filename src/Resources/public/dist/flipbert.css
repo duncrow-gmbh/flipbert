@@ -12566,7 +12566,7 @@ body.flipbook-lightbox-open {
   bottom: 0;
   height: 42px;
   width: 42px;
-  background-image: url("/bundles/duncrowgmbhflipbert/img/flipbert_logo.svg");
+  background-image: url("/bundles/flipbert/img/flipbert_logo.svg");
   background-repeat: no-repeat; }
 
 .flipbook.df-floating .df-ui-controls:after, .flipbook .df-floating .df-ui-controls:after, .df-lightbox-wrapper.df-floating .df-ui-controls:after, .df-lightbox-wrapper .df-floating .df-ui-controls:after {

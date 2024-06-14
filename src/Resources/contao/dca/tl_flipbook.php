@@ -6,6 +6,12 @@
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use Contao\Backend;
+use Contao\Input;
+use Contao\Message;
+use Contao\StringUtil;
+use Contao\DataContainer;
+use Contao\Image;
 
 $GLOBALS['TL_DCA']['tl_flipbook'] = array
 (
@@ -13,7 +19,7 @@ $GLOBALS['TL_DCA']['tl_flipbook'] = array
     // Config
     'config' => array
     (
-        'dataContainer' => 'Table',
+        'dataContainer' => \Contao\DC_Table::class ,
         'switchToEdit' => true,
         'enableVersioning' => true,
         'onsubmit_callback' => array(
@@ -225,7 +231,7 @@ class tl_flipbook extends Backend
             $icon = 'invisible.gif';
         }
 
-        return '<a href="' . $this->addToUrl($href) . '" title="' . specialchars($title) . '"' . $attributes . '>' . Image::getHtml($icon, $label, 'data-state="' . ($row['published'] ? 1 : 0) . '"') . '</a> ';
+        return '<a href="' . $this->addToUrl($href) . '" title="' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '"' . $attributes . '>' . Image::getHtml($icon, $label, 'data-state="' . ($row['published'] ? 1 : 0) . '"') . '</a> ';
     }
 
     /**
@@ -290,9 +296,12 @@ class tl_flipbook extends Backend
     }
 
     /**
+     * @param mixed         $varValue
+	 * @param DataContainer $dc
      * @throws GuzzleException
      * @throws Exception
      */
+
     public function createOnServer($varValue, DataContainer $dc)
     {
 
@@ -316,7 +325,7 @@ class tl_flipbook extends Backend
 
         $response = json_decode($response->getBody()->getContents());
 
-        if ($response->error) {
+        if (isset($response->error) && $response->error) {
             throw new \Exception($GLOBALS['TL_LANG']['tl_flipbook'][$response->error]);
         }
 

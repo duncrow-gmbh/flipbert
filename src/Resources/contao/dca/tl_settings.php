@@ -1,4 +1,8 @@
 <?php
+use Contao\Backend; 
+use Contao\DataContainer;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * System configuration
@@ -33,17 +37,18 @@ class duncrowFlipbook_tl_settings extends Backend {
 
         $server = $GLOBALS['TL_CONFIG']['server'].'/checkLicenses';
 
-        $client = new \GuzzleHttp\Client();
+        $client = new GuzzleHttp\Client();
         $response = $client->request('GET', $server, [
             'query' => $params
         ]);
 
         $response = json_decode($response->getBody()->getContents());
-
-        if($response->error) {
+        
+        if(isset($response->error ) && $response->error) {
+            
             throw new \Exception($GLOBALS['TL_LANG']['tl_settings'][$response->error]);
         }
-
+        
         return $varValue;
     }
 }

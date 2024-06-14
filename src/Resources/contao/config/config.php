@@ -1,10 +1,16 @@
 <?php
 use Contao\System;
 use Symfony\Component\HttpFoundation\Request; 
+use DuncrowGmbh\Flipbert\Model\FlipbookModel; 
+    
+use Contao\ArrayUtil;
+
+$GLOBALS['TL_MODELS']['tl_flipbook'] = FlipbookModel::class;
+
 /**
  * Back end modules
  */
-array_insert($GLOBALS['BE_MOD'], 1, array
+ArrayUtil::arrayInsert($GLOBALS['BE_MOD'], 1, array
 (
     'duncrowFlipbertExtension' => array(
         'duncrowFlipbook' => array
@@ -23,18 +29,15 @@ if (System::getContainer()
 
 $GLOBALS['TL_CONFIG']['server'] = 'https://flipbert.duncrow.com';
 
-/**
- * Models
- */
-$GLOBALS['TL_MODELS']['tl_flipbook'] = '\\DuncrowGmbh\\Flipbert\\Models\\FlipbookModel';
+
 
 /**
  * Content Elements
  */
-array_insert($GLOBALS['TL_CTE'], 1, array
-(
-    'duncrowFlipbook' => array(
-        'duncrowFlipbook' => '\\DuncrowGmbh\\Flipbert\\Classes\\Flipbook',
-        'duncrowFlipbookRow' => '\\DuncrowGmbh\\Flipbert\\Classes\\FlipbookRow'
-    )
-));
+// ArrayUtil::arrayInsert($GLOBALS['TL_CTE'], 1, array
+// (
+//     'duncrowFlipbook' => array(
+//         'duncrowFlipbook' => '\\DuncrowGmbh\\Flipbert\\Controller\\ContentElement\\FlipbookController',
+//         'duncrowFlipbookRow' => '\\DuncrowGmbh\\Flipbert\\Controller\\ContentElement\\FlipbookRowController'
+//     )
+// ));

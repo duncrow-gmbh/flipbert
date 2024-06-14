@@ -4,7 +4,7 @@ namespace DuncrowGmbh\Flipbert;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class DuncrowGmbhFlipbertBundle extends Bundle
+class Flipbert extends Bundle
 {
-
+ 
 }

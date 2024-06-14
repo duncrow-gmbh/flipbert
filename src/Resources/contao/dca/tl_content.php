@@ -1,4 +1,5 @@
 <?php
+use Contao\Input;
 // dca/tl_content.php
 /**
  * Table tl_content
@@ -89,7 +90,7 @@ $GLOBALS['TL_DCA'][$strName]['fields']['duncrowFlipbookHiddenControlElements'] =
 (
     'label'      => &$GLOBALS['TL_LANG'][$strName]['duncrowFlipbookHiddenControlElements'],
     'inputType'  => 'checkbox',
-    'options'    => $GLOBALS['TL_LANG'][$strName]['duncrowFlipbookHiddenControlElements']['options'],
+    'options'    => ($GLOBALS['TL_LANG'][$strName]['duncrowFlipbookHiddenControlElements']['options'] ?? []),
     'eval'       => array(
         'mandatory'     => false,
         'tl_class'      => 'w50',

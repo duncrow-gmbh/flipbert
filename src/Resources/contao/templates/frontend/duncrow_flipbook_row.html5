@@ -1,3 +1,7 @@
+<?php 
+use Contao\FilesModel; 
+?>
+
 <div class="flipbook-row">
     <?php foreach ($this->flipbooks as $flipbook) : ?>
         <div
