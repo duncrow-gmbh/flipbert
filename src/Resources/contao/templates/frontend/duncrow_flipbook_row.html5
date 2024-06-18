@@ -3,7 +3,9 @@ use Contao\FilesModel;
 ?>
 
 <div class="flipbook-row">
-    <?php foreach ($this->flipbooks as $flipbook) : ?>
+    <?php 
+    if(is_array($this->flipbooks)){ 
+        foreach ($this->flipbooks as $flipbook) { ?>
         <div
                 class="_df_thumb"
                 data-controlsposition="<?= $this->duncrowFlipbookControlbarPosition ?>"
@@ -14,5 +16,6 @@ use Contao\FilesModel;
 
             <?= $flipbook->title ?>
         </div >
-    <?php endforeach; ?>
+    <?php }
+    } ?>
 </div>

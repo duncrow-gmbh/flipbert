@@ -25,35 +25,38 @@ class FlipbookRowController extends AbstractContentElementController
 
         $objFlipbooks = FlipbookModel::findMultipleByIds(unserialize($model->duncrowFlipbooks));
 
-        foreach($objFlipbooks as $flipbook) {
-            $pdf = \FilesModel::findByUuid($flipbook->pdf)->path;
-
-            if (!file_exists('/files/flipbert')) {
-                $flipbertFolder = new Folder('files/flipbert');
-                $flipbertFolder->unprotect();
-                $thumbnailsFolder = new Folder('files/flipbert/thumbnails');
-            }
-
-            if($flipbook->thumbnail) {
-                $objFile = FilesModel::findByUuid($flipbook->thumbnail);
-                $thumbnail = $objFile->path;
-            }
-            else {
-                if(!file_exists('files/flipbert/thumbnails/'.$flipbook->alias.'.jpg')) {
-                    $im = new \Imagick($pdf.'[0]');
-                    $im->setImageFormat('jpg');
-                    $im->writeImage('../files/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
-
-                    // recreate symlinks
-                    list($class, $method) = $GLOBALS['TL_PURGE']['custom']['symlinks']['callback'];
-                    $this->import($class);
-                    $this->$class->$method();
+        if(is_array($objFlipbooks)){
+            foreach($objFlipbooks as $flipbook) {
+                $pdf = FilesModel::findByUuid($flipbook->pdf)->path;
+    
+                if (!file_exists('/files/flipbert')) {
+                    $flipbertFolder = new Folder('files/flipbert');
+                    $flipbertFolder->unprotect();
+                    $thumbnailsFolder = new Folder('files/flipbert/thumbnails');
                 }
-                $thumbnail = 'files/flipbert/thumbnails/'.$flipbook->alias.'.jpg';
+    
+                if($flipbook->thumbnail) {
+                    $objFile = FilesModel::findByUuid($flipbook->thumbnail);
+                    $thumbnail = $objFile->path;
+                }
+                else {
+                    if(!file_exists('files/flipbert/thumbnails/'.$flipbook->alias.'.jpg')) {
+                        $im = new \Imagick($pdf.'[0]');
+                        $im->setImageFormat('jpg');
+                        $im->writeImage('../files/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
+    
+                        // recreate symlinks
+                        list($class, $method) = $GLOBALS['TL_PURGE']['custom']['symlinks']['callback'];
+                        $this->import($class);
+                        $this->$class->$method();
+                    }
+                    $thumbnail = 'files/flipbert/thumbnails/'.$flipbook->alias.'.jpg';
+                }
+    
+                $flipbook->thumb = $thumbnail;
             }
-
-            $flipbook->thumb = $thumbnail;
         }
+        
 
         if (System::getContainer()
             ->get('contao.routing.scope_matcher')
