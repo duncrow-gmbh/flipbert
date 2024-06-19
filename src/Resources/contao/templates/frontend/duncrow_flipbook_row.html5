@@ -4,7 +4,7 @@ use Contao\FilesModel;
 
 <div class="flipbook-row">
     <?php 
-    if(is_array($this->flipbooks)){ 
+    if(isset($this->flipbooks)){ 
         foreach ($this->flipbooks as $flipbook) { ?>
         <div
                 class="_df_thumb"

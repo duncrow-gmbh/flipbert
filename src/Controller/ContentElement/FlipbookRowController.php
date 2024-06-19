@@ -25,7 +25,7 @@ class FlipbookRowController extends AbstractContentElementController
 
         $objFlipbooks = FlipbookModel::findMultipleByIds(unserialize($model->duncrowFlipbooks));
 
-        if(is_array($objFlipbooks)){
+        if(isset($objFlipbooks)){
             foreach($objFlipbooks as $flipbook) {
                 $pdf = FilesModel::findByUuid($flipbook->pdf)->path;
     
