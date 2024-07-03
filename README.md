@@ -1,6 +1,6 @@
 ## release Infos: 
-for Contao ^5.3  please use flipbert: ^2.0
-for COntao ^4.13 please use flipbert: ^1.7
+for Contao ^5.3  please use flipbert: ^2.0<br>
+for Contao ^4.13 please use flipbert: ^1.7
 
 ## FlipBert | PDF Flipbook for Contao
 
