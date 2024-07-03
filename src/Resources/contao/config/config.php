@@ -24,7 +24,7 @@ if (System::getContainer()
     ->get('contao.routing.scope_matcher')
     ->isBackendRequest(System::getContainer()
     ->get('request_stack')->getCurrentRequest() ?? Request::create(''))) {
-    $GLOBALS['TL_CSS'][] = 'bundles/duncrowgmbhflipbert/dist/backend.css';
+    $GLOBALS['TL_CSS'][] = 'bundles/flipbert/dist/backend.css';
 }
 
 $GLOBALS['TL_CONFIG']['server'] = 'https://flipbert.duncrow.com';
