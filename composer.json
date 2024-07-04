@@ -1,6 +1,6 @@
 {
   "name": "duncrow-gmbh/flipbert",
-  "version": "2.0.3",
+  "version": "1.7.1",
   "description": "Flipbert Extension for Contao Open Source CMS",
   "keywords": [
     "contao",
@@ -19,8 +19,8 @@
     }
   ],
   "require": {
-    "php": "^8.0",
-    "contao/core-bundle": "^5.3",
+    "php": "^7.2 || ^8.0",
+    "contao/core-bundle": "^4.4",
     "guzzlehttp/guzzle": "^6.5 || ^7.4"
   },
   "require-dev": {
