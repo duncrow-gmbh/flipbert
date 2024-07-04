@@ -9,5 +9,5 @@ use Contao\FilesModel;
     data-height="<?= $this->duncrowFlipbookHeight ?>"
     data-backgroundcolor="<?= $this->duncrowFlipbookBackgroundColor ?>"
     data-hiddenControlElements="<?php if(is_array(unserialize($this->duncrowFlipbookHiddenControlElements))): ?><?= implode(',', unserialize($this->duncrowFlipbookHiddenControlElements)) ?><?php endif; ?>"
-    id="flipbook_<?= $this->flipbook->alias ?>">
+    id="flipbook_<?= $this->flipbook->alias ?>_<?= $this->id ?>">
 </div>

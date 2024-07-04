@@ -12,26 +12,46 @@ const flipbookClass = function () {
         DFLIP.defaults.cMapUrl = "/bundles/flipbert/assets/dflip/js/libs/cmaps/";
     };
 
+
     this.init = function () {
-        jQuery(".flipbook").each(function () {
+        
+        let flipbookLoader = []; 
+        let loadFlipbook = (flipbookLoader) =>{
 
-            let backgroundColor = jQuery(this).data('backgroundcolor');
-            if(backgroundColor !== 'transparent') backgroundColor = '#' + backgroundColor;
-
-            jQuery(this).flipBook(
-                jQuery(this).data('source'),
-                {
-                    height: jQuery(this).data('height'),
-                    controlsPosition: jQuery(this).data('controlsposition'),
-                    paddingTop: 50,
-                    paddingLeft: 50,
-                    paddingRight: 50,
-                    paddingBottom: 50,
-                    backgroundColor: backgroundColor,
-                    hideControls: jQuery(this).data('hiddencontrolelements')
+            
+            let findFlipbook = flipbookLoader.find(x=> x.isLoaded === false);
+            if(typeof findFlipbook !== "undefined"){
+                let backgroundColor = findFlipbook.flipbook.data('backgroundcolor');
+                if(backgroundColor !== 'transparent'){
+                    backgroundColor = '#' + backgroundColor;
                 }
-            );
-        });
+                findFlipbook.flipbook.flipBook(
+                    findFlipbook.flipbook.data('source'),
+                    {
+                        height: findFlipbook.flipbook.data('height'),
+                        controlsPosition: findFlipbook.flipbook.data('controlsposition'),
+                        paddingTop: 50,
+                        paddingLeft: 50,
+                        paddingRight: 50,
+                        paddingBottom: 50,
+                        backgroundColor: backgroundColor,
+                        hideControls: findFlipbook.flipbook.data('hiddencontrolelements'),
+                        onReady: function (flipBook) {
+                            findFlipbook.isLoaded = true; 
+                            loadFlipbook(flipbookLoader);
+                        },
+                    }
+                );
+            }else{
+                // console.log('all flipbooks loaded: ', flipbookLoader); 
+            }
+            
+        }
+        jQuery(".flipbook").each(function () {
+            flipbookLoader.push({flipbook: jQuery(this), isLoaded: false});
+        }); 
+        loadFlipbook(flipbookLoader);
+
 
         jQuery(window).on('popstate', function(e) {
            if(window.location.href.indexOf('#dflip-') > -1) {

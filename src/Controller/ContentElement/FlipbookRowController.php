@@ -40,17 +40,52 @@ class FlipbookRowController extends AbstractContentElementController
                     $thumbnail = $objFile->path;
                 }
                 else {
-                    if(!file_exists('files/flipbert/thumbnails/'.$flipbook->alias.'.jpg')) {
-                        $im = new \Imagick($pdf.'[0]');
-                        $im->setImageFormat('jpg');
-                        $im->writeImage('../files/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
+                    if(extension_loaded('imagick')){
+                        if(!file_exists('files/flipbert/thumbnails/'.$flipbook->alias.'.jpg')) {
+                            $im = new Imagick($pdf.'[0]');
+                            $im->setImageFormat('jpg');
+                            $im->writeImage('../files/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
+        
+                            // recreate symlinks
+                            list($class, $method) = $GLOBALS['TL_PURGE']['custom']['symlinks']['callback'];
+                            $this->import($class);
+                            $this->$class->$method();
+                        }
+                        $thumbnail = 'files/flipbert/thumbnails/'.$flipbook->alias.'.jpg';
+                    }else  if(extension_loaded('gd')){
+                        // TODO: Enable GD Extension (untested)
+                        // if(!file_exists('files/flipbert/thumbnails/'.$flipbook->alias.'.jpg')) {
     
-                        // recreate symlinks
-                        list($class, $method) = $GLOBALS['TL_PURGE']['custom']['symlinks']['callback'];
-                        $this->import($class);
-                        $this->$class->$method();
+                        //     // Convert to PNG files, so GD can be used for the following processing
+                        //         //../files/flipbert/thumbnails/
+                        //         // JPG
+                        //         $cacheDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'pdftoimage' . DIRECTORY_SEPARATOR . bin2hex((new Secure())->generate());
+                        //         $this->filesystem->mkdir($this->cacheDir);
+                        //         (new Process([
+                        //             'gs',
+                        //             '-dSAFER',
+                        //             '-dBATCH',
+                        //             '-dNOPAUSE',
+                        //             '-sDEVICE=png16m',
+                        //             '-dTextAlphaBits=4',
+                        //             '-dGraphicsAlphaBits=4',
+                        //             '-r' . $resolution,
+                        //             '-sOutputFile=' . $cacheDir . DIRECTORY_SEPARATOR . '%03d.png',
+                        //             $pdf[0]
+                        //             ])
+                        //         )->mustRun();
+    
+        
+                        //     // recreate symlinks
+                        //     list($class, $method) = $GLOBALS['TL_PURGE']['custom']['symlinks']['callback'];
+                        //     $this->import($class);
+                        //     $this->$class->$method();
+                        // }
+                        // $thumbnail = 'files/flipbert/thumbnails/'.$flipbook->alias.'.jpg';
+                        $thumbnail = ''; 
+                    }else{
+                        $thumbnail = ''; 
                     }
-                    $thumbnail = 'files/flipbert/thumbnails/'.$flipbook->alias.'.jpg';
                 }
     
                 $flipbook->thumb = $thumbnail;
