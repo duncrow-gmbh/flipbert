@@ -1,7 +1,9 @@
 <?php 
 use Contao\FilesModel; 
 ?>
-
+<?php if($this->cssID){ ?>
+    <div <?= $this->cssID ?> class="flibook-row-container">
+<?php } ?>
 <div class="flipbook-row">
     <?php 
     if(isset($this->flipbooks)){ 
@@ -19,3 +21,6 @@ use Contao\FilesModel;
     <?php }
     } ?>
 </div>
+<?php if($this->cssID){ ?>
+    </div>
+<?php } ?>

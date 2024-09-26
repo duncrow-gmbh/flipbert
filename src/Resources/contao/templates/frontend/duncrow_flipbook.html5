@@ -1,7 +1,9 @@
 <?php 
 use Contao\FilesModel; 
 ?>
-
+<?php if($this->cssID){ ?>
+    <div <?= $this->cssID ?> class="flibook-container">
+<?php } ?>
 <div
     class="flipbook"
     data-source="/<?= FilesModel::findByUuid($this->flipbook->pdf)->path ?>"
@@ -11,3 +13,6 @@ use Contao\FilesModel;
     data-hiddenControlElements="<?php if(is_array(unserialize($this->duncrowFlipbookHiddenControlElements))): ?><?= implode(',', unserialize($this->duncrowFlipbookHiddenControlElements)) ?><?php endif; ?>"
     id="flipbook_<?= $this->flipbook->alias ?>_<?= $this->id ?>">
 </div>
+<?php if($this->cssID){ ?>
+</div>
+<?php } ?>
