@@ -5,7 +5,7 @@ use Contao\FilesModel;
     <div <?= $this->cssID ?> class="flibook-container">
 <?php } ?>
 <div
-    class="flipbook"
+    class="flipbook <?= $this->class ?>"
     data-source="/<?= FilesModel::findByUuid($this->flipbook->pdf)->path ?>"
     data-controlsposition="<?= $this->duncrowFlipbookControlbarPosition ?>"
     data-height="<?= $this->duncrowFlipbookHeight ?>"
