@@ -13,7 +13,7 @@ class FlipbookRow extends \ContentElement
      * Template
      * @var string
      */
-    protected $strTemplate = 'frontend/duncrow_flipbook_row';
+    protected $strTemplate = 'duncrow_flipbook_row';
 
     /**
      * Generate the content element

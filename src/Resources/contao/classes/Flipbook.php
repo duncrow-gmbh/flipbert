@@ -11,7 +11,7 @@ class Flipbook extends \ContentElement
      * Template
      * @var string
      */
-    protected $strTemplate = 'frontend/duncrow_flipbook';
+    protected $strTemplate = 'duncrow_flipbook';
 
     /**
      * Generate the content element
