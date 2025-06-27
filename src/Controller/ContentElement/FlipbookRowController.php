@@ -42,7 +42,7 @@ class FlipbookRowController extends AbstractContentElementController
                 else {
                     if(extension_loaded('imagick')){
                         if(!file_exists('files/flipbert/thumbnails/'.$flipbook->alias.'.jpg')) {
-                            $im = new Imagick($pdf.'[0]');
+                            $im = new \Imagick($pdf.'[0]');
                             $im->setImageFormat('jpg');
                             $im->writeImage('../files/flipbert/thumbnails/'.$flipbook->alias.'.jpg');
         
