@@ -12,6 +12,7 @@ $GLOBALS['TL_LANG'][$strName]['duncrowFlipbook'] = array('Flipbook', 'Select the
 $GLOBALS['TL_LANG'][$strName]['duncrowFlipbooks'] = array('Flipbooks', 'Select the flipbooks to display and their sort order.');
 $GLOBALS['TL_LANG'][$strName]['duncrowFlipbookControlbarPosition'] = array('Control bar position', 'Select the position of the control bar.');
 $GLOBALS['TL_LANG'][$strName]['duncrowFlipbookHeight'] = array('Flipbook height', 'Enter the height of the flipbook in pixels.');
+$GLOBALS['TL_LANG'][$strName]['duncrowRatio'] = array('Ratio Flipbooks', '16 / 9 or 4 / 3 etc. (overwrites height) <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_sizing/Aspect_ratios" target="_blank" style="text-decoration:underline">more infos</a>');
 $GLOBALS['TL_LANG'][$strName]['duncrowFlipbookBackgroundColor'] = array('Background color', 'Enter the background color as a hex value. (empty = transparent background)');
 $GLOBALS['TL_LANG'][$strName]['duncrowFlipbookHiddenControlElements'] = array('Hidden icons of the control bar', 'Select the icons you want to hide in the control bar.');
 

@@ -21,6 +21,25 @@ const flipbookClass = function () {
             
             let findFlipbook = flipbookLoader.find(x=> x.isLoaded === false);
             if(typeof findFlipbook !== "undefined"){
+                let ratio = findFlipbook.flipbook.data('ratio'); 
+                if(ratio){
+                    // Create or update style tag
+                    let styleId = 'flipbook-style';
+                    let styleTag = document.getElementById(styleId);
+                    
+                    if(!styleTag) {
+                        styleTag = document.createElement('style');
+                        styleTag.id = styleId;
+                        document.head.appendChild(styleTag);
+                    }
+                    
+                    styleTag.textContent = `.df-container {
+                        width: 100%;
+                        height: auto !important;
+                        aspect-ratio: ${ratio};
+                    }`;
+                }
+                
                 let backgroundColor = findFlipbook.flipbook.data('backgroundcolor');
                 if(backgroundColor !== 'transparent'){
                     backgroundColor = '#' + backgroundColor;
@@ -28,7 +47,7 @@ const flipbookClass = function () {
                 findFlipbook.flipbook.flipBook(
                     findFlipbook.flipbook.data('source'),
                     {
-                        height: findFlipbook.flipbook.data('height'),
+                        height: (ratio ? 'auto' : findFlipbook.flipbook.data('height')),
                         controlsPosition: findFlipbook.flipbook.data('controlsposition'),
                         paddingTop: 50,
                         paddingLeft: 50,
