@@ -9,6 +9,8 @@ use Contao\FilesModel;
     data-source="/<?= FilesModel::findByUuid($this->flipbook->pdf)->path ?>"
     data-controlsposition="<?= $this->duncrowFlipbookControlbarPosition ?>"
     data-ratio="<?= $this->duncrowRatio ?>"
+    data-ratio-custom="<?= $this->duncrowRatioCustom ?>"
+    
     data-height="<?= $this->duncrowFlipbookHeight ?>"
     data-backgroundcolor="<?= $this->duncrowFlipbookBackgroundColor ?>"
     data-hiddenControlElements="<?php if(is_array(unserialize($this->duncrowFlipbookHiddenControlElements))): ?><?= implode(',', unserialize($this->duncrowFlipbookHiddenControlElements)) ?><?php endif; ?>"

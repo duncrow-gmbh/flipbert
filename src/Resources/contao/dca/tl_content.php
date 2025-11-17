@@ -9,7 +9,7 @@ $strName = 'tl_content';
 //$GLOBALS['TL_DCA'][$strName]['config']['onload_callback'][] = array('duncrowFlipbook_tl_content', 'showJsLibraryHint');
 
 /* Palettes */
-$GLOBALS['TL_DCA'][$strName]['palettes']['duncrowFlipbook'] = '{type_legend},type,duncrowFlipbook;{flipbookOptions_legend},duncrowFlipbookHeight,duncrowRatio,duncrowFlipbookControlbarPosition,duncrowFlipbookBackgroundColor,duncrowFlipbookHiddenControlElements;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop;';
+$GLOBALS['TL_DCA'][$strName]['palettes']['duncrowFlipbook'] = '{type_legend},type,duncrowFlipbook;{flipbookOptions_legend},duncrowFlipbookHeight,duncrowRatio,duncrowRatioCustom,duncrowFlipbookControlbarPosition,duncrowFlipbookBackgroundColor,duncrowFlipbookHiddenControlElements;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop;';
 $GLOBALS['TL_DCA'][$strName]['palettes']['duncrowFlipbookRow'] = '{type_legend},type,duncrowFlipbooks;{flipbookOptions_legend},duncrowFlipbookControlbarPosition,duncrowFlipbookHiddenControlElements;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop;';
 
 /* Fields */
@@ -49,19 +49,31 @@ $GLOBALS['TL_DCA'][$strName]['fields']['duncrowFlipbookHeight'] = array
     'label'      => &$GLOBALS['TL_LANG'][$strName]['duncrowFlipbookHeight'],
     'inputType'  => 'text',
     'eval'       => array(
-        'mandatory'     => true,
+        'mandatory'     => false,
         'maxlength'     => 10,
         'rgxp'          => 'natural',
         'tl_class'      => 'clr w50'
     ),
     'sql'        => "int(10) unsigned NOT NULL default '500'"
 );
+$GLOBALS['TL_DCA'][$strName]['fields']['duncrowRatioCustom'] = array
+(
+    'label'      => &$GLOBALS['TL_LANG'][$strName]['duncrowRatioCustom'],
+    'inputType'  => 'text',
+    'eval'       => array(
+        'mandatory'     => false,
+        'tl_class'      => 'w50'
+    ),
+    'sql'        => "varchar(12) NULL default ''"
+);
 $GLOBALS['TL_DCA'][$strName]['fields']['duncrowRatio'] = array
 (
     'label'      => &$GLOBALS['TL_LANG'][$strName]['duncrowRatio'],
-    'inputType'  => 'text',
+    'inputType'  => 'select',
+    'options'    => ($GLOBALS['TL_LANG'][$strName]['duncrowRatio']['options'] ?? []),
     'eval'       => array(
-        'mandatory'     => true,
+        'mandatory'     => false,
+        'includeBlankOption' => true,
         'tl_class'      => 'w50'
     ),
     'sql'        => "varchar(12) NULL default ''"

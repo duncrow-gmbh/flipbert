@@ -21,7 +21,8 @@ const flipbookClass = function () {
             
             let findFlipbook = flipbookLoader.find(x=> x.isLoaded === false);
             if(typeof findFlipbook !== "undefined"){
-                let ratio = findFlipbook.flipbook.data('ratio'); 
+                let ratio = findFlipbook.flipbook.data('ratio-custom') ? findFlipbook.flipbook.data('ratio-custom') : findFlipbook.flipbook.data('ratio'); 
+
                 if(ratio){
                     // Create or update style tag
                     let styleId = 'flipbook-style';
