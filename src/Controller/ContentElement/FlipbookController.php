@@ -39,7 +39,6 @@ class FlipbookController extends AbstractContentElementController
         $GLOBALS['TL_JAVASCRIPT'][] = '/bundles/flipbert/assets/dflip/js/dflip.js';
         $GLOBALS['TL_JAVASCRIPT'][] = '/bundles/flipbert/dist/flipbert.js';
         $GLOBALS['TL_CSS'][] = '/bundles/flipbert/assets/dflip/css/dflip.min.css';
-        $GLOBALS['TL_CSS'][] = '/bundles/flipbert/assets/dflip/css/themify-icons.min.css';
         $GLOBALS['TL_CSS'][] = '/bundles/flipbert/dist/flipbert.css';
 
         return $template->getResponse();
