@@ -98,34 +98,35 @@ var PRESENTATION = DFLIP;
     minTextureSize: 256,	//min page size to be rendered. for pdf files only
     rangeChunkSize: 524288,
 
-    // icons for the buttons
+    // icons for the buttons (SVGs in bundles/flipbert/icons, styled in flipbert.css)
+    // keep one class per icon: play/pause and single/doublepage are toggled via toggleClass/hasClass
     icons: {
-      'altnext': 'far fa-chevron-right',
-      'altprev': 'far fa-chevron-left',
-      'next': 'far fa-chevron-right',
-      'prev': 'far fa-chevron-left',
-      'end': 'far fa-chevron-double-right',
-      'start': 'far fa-chevron-double-left',
-      'share': 'fas fa-share-alt',
-      'help': 'ti-help-alt',
-      'more': 'ti-more-alt',
-      'download': 'far fa-file-download',
-      'zoomin': 'far fa-search-plus',
-      'zoomout': 'far fa-search-minus',
-      'fullscreen': 'far fa-expand-arrows-alt',
-      'fitscreen': 'ti-arrows-corner',
-      'thumbnail': 'fas fa-th-large',
-      'outline': 'far fa-list',
-      'close': 'far fa-times',
-      'doublepage': 'ti-book',
-      'singlepage': 'ti-file',
-      'sound': 'far fa-volume',
-      'facebook': 'fab fa-facebook-f',
-      'google': 'fab fa-google-plus-g',
-      'twitter': 'fab fa-twitter',
-      'mail': 'far fa-envelope',
-      'play': 'far fa-play',
-      'pause': 'far fa-pause'
+      'altnext': 'flipbert-icon-chevron-right',
+      'altprev': 'flipbert-icon-chevron-left',
+      'next': 'flipbert-icon-chevron-right',
+      'prev': 'flipbert-icon-chevron-left',
+      'end': 'flipbert-icon-chevron-double-right',
+      'start': 'flipbert-icon-chevron-double-left',
+      'share': 'flipbert-icon-share',
+      'help': 'flipbert-icon-help',
+      'more': 'flipbert-icon-more',
+      'download': 'flipbert-icon-file-download',
+      'zoomin': 'flipbert-icon-search-plus',
+      'zoomout': 'flipbert-icon-search-minus',
+      'fullscreen': 'flipbert-icon-expand-arrows-alt',
+      'fitscreen': 'flipbert-icon-arrows-corner',
+      'thumbnail': 'flipbert-icon-th-large',
+      'outline': 'flipbert-icon-list',
+      'close': 'flipbert-icon-close',
+      'doublepage': 'flipbert-icon-book',
+      'singlepage': 'flipbert-icon-file',
+      'sound': 'flipbert-icon-volume',
+      'facebook': 'flipbert-icon-facebook',
+      'google': 'flipbert-icon-google',
+      'twitter': 'flipbert-icon-x-twitter',
+      'mail': 'flipbert-icon-envelope',
+      'play': 'flipbert-icon-play',
+      'pause': 'flipbert-icon-pause'
     },
 
     // TRANSLATION text to be displayed
@@ -3142,7 +3143,7 @@ var PRESENTATION = DFLIP;
       _this.targetObject.container.append(thumbContainer);
 
       var sideMenuClose = $(html.div, {
-        class: "df-ui-btn df-ui-sidemenu-close far fa-times"
+        class: "df-ui-btn df-ui-sidemenu-close flipbert-icon-close"
       });
       thumbContainer.append(sideMenuClose);
       _this.thumblist.reset($(_this.thumblist.container).height());
@@ -3159,7 +3160,7 @@ var PRESENTATION = DFLIP;
       var outlineWrapper = $('<div>').addClass("df-outline-wrapper");
 
       var sideMenuClose = $(html.div, {
-        class: "df-ui-btn df-ui-sidemenu-close far fa-times"
+        class: "df-ui-btn df-ui-sidemenu-close flipbert-icon-close"
       });
 
       outlineContainer.append(sideMenuClose).append(outlineWrapper);
